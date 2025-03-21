@@ -40,7 +40,7 @@ I am proficient in a variety of technologies used in my projects:
 ## 📝 Contact
 
 - Website: [benmacha.tn](https://benmacha.tn)
-- LinkedIn: [Ben Macha](https://www.linkedin.com/in/ben-macha)
+- LinkedIn: [Ben Macha](https://www.linkedin.com/in/benmacha/)
 - Email: contact@benmacha.tn
 
 Feel free to follow me and explore my projects! 🚀

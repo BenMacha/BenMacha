@@ -1,7 +1,7 @@
 # 🇵🇸 Free Palestine | Stop Genocide
 ![Support Palestine](https://img.shields.io/badge/Support-Palestine-FF0000?style=flat&logo=palestine&logoColor=white)
 
-# 👋 Hello, I'm Ben Macha (BEN MECHA)!
+# 👋 Hello, I'm Ben Macha (BEN MECHA)! ![Support Palestine](https://img.shields.io/badge/🇵🇸%20Support-Palestine-008000?style=flat&logo=data:image/svg+xml;base64,...)
 
 I'm a **Full Stack Developer** passionate about web and mobile development, specializing in **Symfony, React, and Vue.js**. I have strong experience in software architecture and technical leadership. 🚀
 

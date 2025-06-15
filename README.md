@@ -34,7 +34,7 @@ A professional multilingual portfolio built with **Vue.js 3, TypeScript, and Tai
 ![GitHub Stats](https://github.com/BenMacha/BenMacha/blob/main/profile-3d-contrib/profile-gitblock.svg)
 
 ## 📝 Contact
-- 🌍 Website: [(https://benmacha.tn](https://benmacha.tn)
+- 🌍 Website: [https://benmacha.tn](https://benmacha.tn)
 - 💼 LinkedIn: [BEN MECHA Ali](https://www.linkedin.com/in/benmacha/)
 - 📧 Email: [contact@benmacha.tn](mailto:contact@benmacha.tn)
 

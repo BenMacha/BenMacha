@@ -26,9 +26,9 @@ focus:
   - GDPR-compliant data processing
   - Technical innovation through AI & automation
 previous:
-  - Tech Lead @ Keytchens (6 years) — Led Symfony v2.8 → v6.4 migration
   - Lead PHP Developer @ CCM Benchmark
   - Symfony Consultant @ Manymore / Matalto
+  - Full Stack Developer @ UKN / Argolife
 languages: [French (Native), Arabic (Native), English (Professional)]
 passion: Open Source Symfony Bundles & SDKs
 ```
@@ -76,9 +76,6 @@ passion: Open Source Symfony Bundles & SDKs
                    ─────────────────────────────────────────
 2024 ── 2025       Lead PHP Developer          CCM Benchmark
                    Internal Products • Docker CI/CD • Mentoring
-                   ─────────────────────────────────────────
-2018 ── 2024       Tech Lead PHP/Symfony        Keytchens
-                   Symfony Migration • Real-Time Orders • Team Lead
                    ─────────────────────────────────────────
 2019 ── 2020       Symfony Consultant           Manymore / Matalto
                    GraphQL • API Architecture

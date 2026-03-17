@@ -1,129 +1,123 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=venom&color=0:ff6b6b,50:ee5a24,100:ff6b6b&height=250&section=header&text=Ben%20Macha&fontSize=90&fontColor=ffffff&fontAlignY=35&desc=%E2%9A%A1%20Tech%20Lead%20%E2%80%A2%20Full%20Stack%20Developer%20%E2%80%A2%20Open%20Source%20Creator&descSize=18&descColor=ffffff&descAlignY=55&animation=twinkling&stroke=ff6b6b&strokeWidth=1" />
-
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=3000&pause=1000&color=FF6B6B&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=70&lines=%F0%9F%94%A5+8%2B+Years+Building+Production+Systems;%F0%9F%9A%80+Symfony+%7C+React+%7C+Vue.js+%7C+Flutter;%F0%9F%8C%8D+Based+in+Paris+%E2%80%A2+Open+to+Collaboration" alt="Typing SVG" />
+<br>
+
+# `> BEN MACHA_`
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=3000&pause=1000&color=000000&center=true&vCenter=true&repeat=true&width=500&height=45&lines=Tech+Lead+%E2%80%A2+Full+Stack+Developer+%E2%80%A2+Open+Source;8%2B+Years+Building+Production+Systems;Symfony+%7C+React+%7C+Vue.js+%7C+Flutter;Based+in+Paris+%F0%9F%87%AB%F0%9F%87%B7" alt="Typing SVG" />
+
+<br>
+
+[![Portfolio](https://img.shields.io/badge/benmacha.tn-000?style=flat&logo=googlechrome&logoColor=fff)](https://benmacha.tn)&nbsp;&nbsp;&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=flat&logo=linkedin&logoColor=fff)](https://www.linkedin.com/in/benmacha/)&nbsp;&nbsp;&nbsp;
+[![Email](https://img.shields.io/badge/Email-000?style=flat&logo=gmail&logoColor=fff)](mailto:contact@benmacha.tn)&nbsp;&nbsp;&nbsp;
+![Views](https://komarev.com/ghpvc/?username=BenMacha&style=flat&color=000&label=views)
 
 </div>
 
----
-
-<div align="center">
-
-<a href="https://benmacha.tn"><img src="https://img.shields.io/badge/%F0%9F%8C%90_Portfolio-ff6b6b?style=flat-square&logoColor=white" height="28" /></a>&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/benmacha/"><img src="https://img.shields.io/badge/%F0%9F%92%BC_LinkedIn-ff6b6b?style=flat-square&logoColor=white" height="28" /></a>&nbsp;&nbsp;
-<a href="mailto:contact@benmacha.tn"><img src="https://img.shields.io/badge/%E2%9C%89%EF%B8%8F_Email-ff6b6b?style=flat-square&logoColor=white" height="28" /></a>&nbsp;&nbsp;
-<img src="https://komarev.com/ghpvc/?username=BenMacha&style=flat-square&color=ff6b6b&label=Profile+Views" height="28" />
-
-</div>
+<br>
 
 ---
 
 <br>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### &nbsp;&nbsp;<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="22">&nbsp; Who I Am
-
-```js
-const benMacha = {
-  role: "IT Project Manager @ ORPI",
-  location: "Paris, France 🇫🇷",
-  experience: "8+ years",
-  languages: ["French", "Arabic", "English"],
-
-  current: [
-    "Data-driven dashboards",
-    "GDPR-compliant processing",
-    "AI & automation innovation"
-  ],
-
-  passion: "Open Source Symfony Bundles"
-};
+```
+ ABOUT
+ ─────────────────────────────────────────────────────────
+ Name          Ben Macha Ali
+ Location      Paris, France
+ Role          IT Project Manager @ ORPI
+ Experience    8+ years
+ Languages     French · Arabic · English
+ Focus         Dashboards · GDPR · AI & Automation
+ Passion       Open Source Symfony Bundles & SDKs
 ```
 
-</td>
-<td width="50%" valign="top">
+<br>
 
-### &nbsp;&nbsp;<img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="22">&nbsp; Experience
-
-|  | Role | Company |
-|:---:|:---|:---|
-| `2025` | **IT Project Manager** | ORPI |
-| `2024` | **Lead PHP Developer** | CCM Benchmark |
-| `2019` | **Symfony Consultant** | Manymore / Matalto |
-| `2017` | **Full Stack Developer** | UKN / Argolife |
+```
+ CAREER
+ ─────────────────────────────────────────────────────────
+ 2025 → now    IT Project Manager        ORPI
+ 2024 → 2025   Lead PHP Developer        CCM Benchmark
+ 2019 → 2020   Symfony Consultant        Manymore / Matalto
+ 2017 → 2018   Full Stack Developer      UKN / Argolife
+```
 
 <br>
 
-> *"Building scalable platforms that make a real impact."*
-
-</td>
-</tr>
-</table>
+---
 
 <br>
-
-## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="22">&nbsp; Tech Stack
 
 <div align="center">
 
-| Backend | Frontend & Mobile | DevOps & Tools |
-|:---:|:---:|:---:|
-| <img src="https://skillicons.dev/icons?i=php,symfony,laravel&theme=light" /> | <img src="https://skillicons.dev/icons?i=react,nextjs,vue&theme=light" /> | <img src="https://skillicons.dev/icons?i=docker,aws,jenkins&theme=light" /> |
-| <img src="https://skillicons.dev/icons?i=nodejs,python,graphql&theme=light" /> | <img src="https://skillicons.dev/icons?i=nuxtjs,ts,tailwind&theme=light" /> | <img src="https://skillicons.dev/icons?i=githubactions,linux,nginx&theme=light" /> |
-| | <img src="https://skillicons.dev/icons?i=js,flutter&theme=light" /> | <img src="https://skillicons.dev/icons?i=redis,mysql&theme=light" /> |
+**`TECH STACK`**
+
+<br>
+
+<img src="https://skillicons.dev/icons?i=php,symfony,laravel,nodejs,python,graphql&theme=dark" />
+
+<img src="https://skillicons.dev/icons?i=react,nextjs,vue,nuxtjs,ts,js&theme=dark" />
+
+<img src="https://skillicons.dev/icons?i=tailwind,flutter,docker,aws,jenkins,githubactions&theme=dark" />
+
+<img src="https://skillicons.dev/icons?i=linux,nginx,redis,mysql&theme=dark" />
 
 </div>
 
 <br>
 
-## <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="22">&nbsp; Featured Projects
+---
+
+<br>
 
 <div align="center">
 
+**`OPEN SOURCE`**
+
+<br>
+
 <a href="https://github.com/BenMacha/ubereat-php">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=ubereat-php&hide_border=true&title_color=ff6b6b&icon_color=ff6b6b&text_color=555&border_radius=12" width="47%" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=ubereat-php&theme=github_dark&hide_border=true&bg_color=000&title_color=fff&icon_color=fff&text_color=888" width="47%" />
 </a>&nbsp;
 <a href="https://github.com/BenMacha/Templatebundle">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=Templatebundle&hide_border=true&title_color=ff6b6b&icon_color=ff6b6b&text_color=555&border_radius=12" width="47%" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=Templatebundle&theme=github_dark&hide_border=true&bg_color=000&title_color=fff&icon_color=fff&text_color=888" width="47%" />
 </a>
 
 <a href="https://github.com/BenMacha/mouseTracker">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=mouseTracker&hide_border=true&title_color=ff6b6b&icon_color=ff6b6b&text_color=555&border_radius=12" width="47%" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=mouseTracker&theme=github_dark&hide_border=true&bg_color=000&title_color=fff&icon_color=fff&text_color=888" width="47%" />
 </a>&nbsp;
 <a href="https://github.com/BenMacha/diagram-bundle">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=diagram-bundle&hide_border=true&title_color=ff6b6b&icon_color=ff6b6b&text_color=555&border_radius=12" width="47%" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=diagram-bundle&theme=github_dark&hide_border=true&bg_color=000&title_color=fff&icon_color=fff&text_color=888" width="47%" />
 </a>
 
 <a href="https://github.com/BenMacha/benmacha.github.io">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=benmacha.github.io&hide_border=true&title_color=ff6b6b&icon_color=ff6b6b&text_color=555&border_radius=12" width="47%" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=BenMacha&repo=benmacha.github.io&theme=github_dark&hide_border=true&bg_color=000&title_color=fff&icon_color=fff&text_color=888" width="47%" />
 </a>
 
 </div>
 
 <br>
 
-## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Ris/giphy.gif" width="22">&nbsp; GitHub Analytics
-
-<div align="center">
-
-<img height="175" src="https://github-readme-stats.vercel.app/api?username=BenMacha&show_icons=true&hide_border=true&title_color=ff6b6b&icon_color=ff6b6b&text_color=555&ring_color=ff6b6b&border_radius=12&include_all_commits=true&count_private=true" />&nbsp;
-<img height="175" src="https://github-readme-streak-stats.herokuapp.com?user=BenMacha&hide_border=true&ring=FF6B6B&fire=EE5A24&currStreakLabel=FF6B6B&sideLabels=555&currStreakNum=555&dates=999&sideNums=555&stroke=eee&border_radius=12" />
-
-</div>
+---
 
 <br>
 
 <div align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=BenMacha&custom_title=Contribution%20Timeline&hide_border=true&color=ff6b6b&line=ff6b6b&point=ee5a24&area=true&area_color=ff6b6b&radius=12" width="95%" />
-</div>
+
+**`STATS`**
 
 <br>
 
-<div align="center">
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=BenMacha&show_icons=true&hide_border=true&bg_color=000&title_color=fff&icon_color=fff&text_color=888&ring_color=fff&include_all_commits=true&count_private=true" />&nbsp;
+<img height="170" src="https://github-readme-streak-stats.herokuapp.com?user=BenMacha&hide_border=true&background=000&ring=FFF&fire=FFF&currStreakLabel=FFF&sideLabels=888&currStreakNum=FFF&dates=555&sideNums=888&stroke=222" />
+
+<br><br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=BenMacha&custom_title=Contributions&hide_border=true&bg_color=000000&color=ffffff&line=ffffff&point=888888&area=true&area_color=333333" width="95%" />
+
+<br>
 
 ![GitHub Stats](https://github.com/BenMacha/BenMacha/blob/main/profile-3d-contrib/profile-gitblock.svg)
 
@@ -133,22 +127,24 @@ const benMacha = {
 
 ---
 
+<br>
+
 <div align="center">
 
-### <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="22">&nbsp; Let's Build Something Together
+**`CONNECT`**
 
 <br>
 
-I'm always open to collaborating on **Symfony**, **React**, and **innovative web projects**.
+*Open to collaborating on Symfony, React, and innovative web projects.*
 
 <br>
 
-<a href="https://benmacha.tn"><img src="https://img.shields.io/badge/Portfolio-ff6b6b?style=for-the-badge&logo=firefoxbrowser&logoColor=white" /></a>&nbsp;
-<a href="https://www.linkedin.com/in/benmacha/"><img src="https://img.shields.io/badge/Hire_Me-ee5a24?style=for-the-badge&logo=linkedin&logoColor=white" /></a>&nbsp;
-<a href="mailto:contact@benmacha.tn"><img src="https://img.shields.io/badge/Say_Hello-ff6b6b?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+[![Portfolio](https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=googlechrome&logoColor=fff)](https://benmacha.tn)&nbsp;
+[![Hire Me](https://img.shields.io/badge/Hire_Me-000?style=for-the-badge&logo=linkedin&logoColor=fff)](https://www.linkedin.com/in/benmacha/)&nbsp;
+[![Say Hello](https://img.shields.io/badge/Say_Hello-000?style=for-the-badge&logo=gmail&logoColor=fff)](mailto:contact@benmacha.tn)
+
+<br>
 
 </div>
 
-<br>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:ff6b6b,50:ee5a24,100:ff6b6b&height=120&section=footer" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&color=000&height=2&section=footer" />

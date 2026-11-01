@@ -1,5 +1,5 @@
 {
-  "merged": 16,
+  "merged": 17,
   "review": 22,
   "projects": [
     {
@@ -8,8 +8,8 @@
       "logo": "symfony",
       "suffix": "",
       "notes": [],
-      "merged": 15,
-      "review": 1,
+      "merged": 16,
+      "review": 0,
       "prs": [
         {
           "number": 67723,
@@ -118,9 +118,9 @@
         },
         {
           "number": 67699,
-          "title": "[Form] Validate the entries renumbered by the keep_as_list option of CollectionType",
+          "title": "[Form] Validate the collection entries that keep_as_list doesn't need to renumber",
           "url": "https://github.com/symfony/symfony/pull/67699",
-          "state": "open",
+          "state": "merged",
           "created": "2026-10-31"
         }
       ]
@@ -132,8 +132,15 @@
       "suffix": "",
       "notes": [],
       "merged": 0,
-      "review": 8,
+      "review": 9,
       "prs": [
+        {
+          "number": 8783,
+          "title": "fix(laravel): filter on every value given to EqualsFilter",
+          "url": "https://github.com/api-platform/core/pull/8783",
+          "state": "open",
+          "created": "2026-11-01"
+        },
         {
           "number": 8782,
           "title": "fix(laravel): purge the HTTP cache on GraphQL mutations",

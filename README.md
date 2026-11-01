@@ -32,11 +32,11 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-16 merged pull requests so far, updated hourly.
+17 merged pull requests so far, updated hourly.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
-Merged (15):
+Merged (16):
 
 - [#67723](https://github.com/symfony/symfony/pull/67723) **Security**: Do not request a re-authentication that cannot prove a recent authentication
 - [#67722](https://github.com/symfony/symfony/pull/67722) **Messenger**: Ignore ids that are not integers when finding a message of the Doctrine transport
@@ -53,15 +53,13 @@ Merged (15):
 - [#67702](https://github.com/symfony/symfony/pull/67702) **Form**: Fix submitting "0" to a non-compound root form
 - [#67701](https://github.com/symfony/symfony/pull/67701) **Form**: Fix the post_max_size check when it is set to a negative value
 - [#67700](https://github.com/symfony/symfony/pull/67700) **Form**: Ignore collection entries with invalid names when allow_add is enabled
-
-Under review (1):
-
-- [#67699](https://github.com/symfony/symfony/pull/67699) **Form**: Validate the entries renumbered by the keep_as_list option of CollectionType
+- [#67699](https://github.com/symfony/symfony/pull/67699) **Form**: Validate the collection entries that keep_as_list doesn't need to renumber
 
 ### [API Platform](https://github.com/api-platform/core)
 
-Under review (8):
+Under review (9):
 
+- [#8783](https://github.com/api-platform/core/pull/8783) **laravel**: filter on every value given to EqualsFilter
 - [#8782](https://github.com/api-platform/core/pull/8782) **laravel**: purge the HTTP cache on GraphQL mutations
 - [#8781](https://github.com/api-platform/core/pull/8781) **laravel**: ignore non-string values in search filters
 - [#8780](https://github.com/api-platform/core/pull/8780) **serializer**: unwrap the collection key type, not the collection type

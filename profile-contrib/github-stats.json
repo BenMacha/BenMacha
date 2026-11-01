@@ -1,14 +1,14 @@
 {
  "login": "BenMacha",
- "updated": "2026-11-01T11:26:12Z",
+ "updated": "2026-11-01T16:05:59Z",
  "year": 2026,
- "contributions_year": 7067,
- "contributions_calendar": 7315,
- "commits": 142,
- "pull_requests": 56,
+ "contributions_year": 8040,
+ "contributions_calendar": 8288,
+ "commits": 152,
+ "pull_requests": 59,
  "issues": 2,
  "reviews": 0,
- "public_repos": 74,
+ "public_repos": 73,
  "stars": 16,
  "followers": 15,
  "languages": [
@@ -16,31 +16,31 @@
    "name": "JavaScript",
    "color": "#f1e05a",
    "bytes": 2800425,
-   "share": 22.5
+   "share": 22.4
   },
   {
    "name": "HTML",
    "color": "#e34c26",
    "bytes": 2506033,
-   "share": 20.1
+   "share": 20.0
   },
   {
    "name": "Vue",
    "color": "#41b883",
-   "bytes": 2342726,
-   "share": 18.8
+   "bytes": 2322358,
+   "share": 18.5
   },
   {
    "name": "PHP",
    "color": "#4F5D95",
    "bytes": 1927861,
-   "share": 15.5
+   "share": 15.4
   },
   {
    "name": "CSS",
    "color": "#663399",
-   "bytes": 1466021,
-   "share": 11.8
+   "bytes": 1466192,
+   "share": 11.7
   },
   {
    "name": "Twig",
@@ -1504,11 +1504,11 @@
   },
   {
    "date": "2026-10-31",
-   "count": 36
+   "count": 35
   },
   {
    "date": "2026-11-01",
-   "count": 73
+   "count": 1047
   }
  ]
 }

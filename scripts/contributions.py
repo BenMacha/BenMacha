@@ -31,8 +31,8 @@ END = "<!-- CONTRIBUTIONS:END -->"
 
 REPOSITORIES = [
     {"repo": "symfony/symfony", "name": "Symfony", "logo": "symfony"},
-    {"repo": "api-platform/core", "name": "API Platform", "logo": "initials:AP"},
-    {"repo": "api-platform/api-platform", "name": "API Platform installer", "logo": "initials:AP"},
+    {"repo": "api-platform/core", "name": "API Platform", "logo": "apiplatform"},
+    {"repo": "api-platform/api-platform", "name": "API Platform installer", "logo": "apiplatform"},
     {"repo": "caddyserver/caddy", "name": "Caddy", "logo": "caddy"},
     {
         "repo": "ccmbenchmark/ting",

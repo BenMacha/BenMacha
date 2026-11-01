@@ -18,6 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/contributions.py
+      # The figures (scripts/anatomy-mario/) use the pixel design of benmacha.tn: Node built-ins only
       - name: Draw the pull request machine
         run: node scripts/pr_machine.mjs profile-contrib/stats.json
       - name: Draw the tech stack, the organizations and the packages

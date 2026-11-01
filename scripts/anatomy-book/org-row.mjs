@@ -4,22 +4,22 @@
 // the personal workshop a shed with a roller door and a workbench with a screen and a lamp.
 // Each building carries its name plate.
 //
-// orgRow({ width }) → { svg, width, height, points: [restaurant, agency, workshop] }
+// orgRow({ kinds: ["restaurant" | "agency" | "workshop"], plates: [name plate text], width }) → { svg, width, height, points }
+//   one building per entry, left to right; points: the top of each building, for callouts.
 
 import * as k from "./iso-kit.mjs";
 import { fitWidth, fix, kit } from "./draw.mjs";
 
-export function orgRow({ width = 560 } = {}) {
-  const BASE = { x: -150, y: -56, w: 300, d: 116 };
-  const REST = { x: -136, y: -36, w: 66, d: 46 };
+export function orgRow({ kinds = ["restaurant", "agency", "workshop"], plates = [], width = 560 } = {}) {
+  const SLOT = 100;
+  const n = Math.max(1, kinds.length);
+  const BASE = { x: -(n * SLOT) / 2, y: -56, w: n * SLOT, d: 116 };
   const REST_H = 36;
-  const AG = { x: -34, y: -40, w: 58, d: 44 };
   const AG_H = 30;
   const RIDGE = 18;
-  const SHOP = { x: 62, y: -40, w: 74, d: 48 };
   const SHOP_H = 34;
 
-  const { P, height } = fitWidth([...k.boxCorners(BASE, -7, 0), [AG.x, AG.y + AG.d / 2, AG_H + RIDGE + 4], [REST.x, REST.y, REST_H + 10]], width, { pad: 6, azimuth: 52 });
+  const { P, height } = fitWidth([...k.boxCorners(BASE, -7, 0), [BASE.x + 20, -18, AG_H + RIDGE + 4], [BASE.x + 20, -40, REST_H + 10]], width, { pad: 6, azimuth: 52 });
   const { at, poly, seg, box, cyl, line, faceText } = kit(P);
   const dot = ([x, y, z], r = 1, cls = "dot") => {
     const [sx, sy] = at([x, y, z]);
@@ -34,13 +34,12 @@ export function orgRow({ width = 560 } = {}) {
   out.push(line(poly([[BASE.x + 6, BASE.y + 6, 0], [BASE.x + BASE.w - 6, BASE.y + 6, 0], [BASE.x + BASE.w - 6, BASE.y + BASE.d - 6, 0], [BASE.x + 6, BASE.y + BASE.d - 6, 0]]), "ru"));
   out.push(line(seg([BASE.x + 10, 44, 0], [BASE.x + BASE.w - 10, 44, 0]), "ru"));
   for (const [x, y] of [[BASE.x + 3, BASE.y + 3], [BASE.x + BASE.w - 3, BASE.y + 3], [BASE.x + 3, BASE.y + BASE.d - 3], [BASE.x + BASE.w - 3, BASE.y + BASE.d - 3]]) out.push(dot([x, y, 0], 1.2));
+  const GROUND = out.length;
   const path = (pts, cls) => line(k.pathOf(pts.map(at)), `${cls} flow`);
-  out.push(path([[REST.x + 30, REST.y + REST.d + 18, 0], [REST.x + 30, 36, 0], [AG.x + AG.w / 2, 36, 0], [AG.x + AG.w / 2, AG.y + AG.d + 2, 0]], "g"));
-  out.push(path([[AG.x + AG.w / 2, 36, 0], [SHOP.x + 26, 36, 0], [SHOP.x + 26, SHOP.y + SHOP.d + 2, 0]], "r"));
 
-  // ---------------------------------------------------------------- 1 · restaurant
-  {
-    const B = REST;
+  // ---------------------------------------------------------------- restaurant
+  function restaurant(x0, plate) {
+    const B = { x: x0, y: -40 + 4, w: 66, d: 46 };
     const fy = B.y + B.d;
     const face = [];
     face.push(`<path class="ln" d="${rectY(fy, B.x + 8, 0, 14, 19)}"/>`); // door
@@ -51,7 +50,7 @@ export function orgRow({ width = 560 } = {}) {
     out.push(box({ x: B.x - 1, y: B.y - 1, w: B.w + 2, d: B.d + 2 }, REST_H, 3));
     // name plate on the parapet
     out.push(box({ x: B.x + 14, y: fy, w: 38, d: 2 }, REST_H - 8.5, 8));
-    out.push(faceText("y", fy + 2, B.x + 33, REST_H - 6.6, "Pepprio", { size: 6.6, cls: "h rd" }));
+    out.push(faceText("y", fy + 2, B.x + 33, REST_H - 6.6, plate, { size: Math.min(6.6, 44 / plate.length), cls: "h rd" }));
     // striped awning over the door and window, with its valance
     const z0 = 24;
     const z1 = 18;
@@ -67,11 +66,11 @@ export function orgRow({ width = 560 } = {}) {
     out.push(line(seg([B.x + 47.5, fy + 23, 13.5], [B.x + 53.5, fy + 23, 13.5]), "g"));
     out.push(cyl(B.x + 12, fy + 22, 1, 0, 10));
     out.push(cyl(B.x + 12, fy + 22, 7, 10, 1.6));
+    return { door: B.x + 30, front: B.y + B.d, top: at([B.x + 8, B.y + 0, REST_H + 3]) };
   }
-
-  // ---------------------------------------------------------------- 2 · agency
-  {
-    const B = AG;
+  // ---------------------------------------------------------------- agency
+  function agency(x0, plate) {
+    const B = { x: x0, y: -40 + 0, w: 58, d: 44 };
     const fy = B.y + B.d;
     const face = [];
     face.push(`<path class="ln" d="${rectY(fy, B.x + 22, 0, 14, 21)}"/>`);
@@ -92,18 +91,18 @@ export function orgRow({ width = 560 } = {}) {
     out.push(`<circle class="dot r" cx="${fix(cx0)}" cy="${fix(cy0)}" r="1.4"/>`);
     // name plate over the door
     out.push(box({ x: B.x + 14, y: fy + 1, w: 30, d: 2 }, 22.5, 6.5));
-    out.push(faceText("y", fy + 3, B.x + 29, 24.2, "Pignelle", { size: 5.4, cls: "h ink" }));
+    out.push(faceText("y", fy + 3, B.x + 29, 24.2, plate, { size: Math.min(5.4, 34 / plate.length), cls: "h ink" }));
     // "for sale" board on a post in front
     const [bx, by] = [B.x + 6, fy + 18];
     out.push(cyl(bx, by, 0.9, 0, 22));
     out.push(line(seg([bx, by, 20], [bx + 18, by, 20])));
     out.push(box({ x: bx + 3, y: by - 1, w: 15, d: 2 }, 9, 10, "m-r"));
     out.push(faceText("y", by + 1, bx + 10.5, 12.4, "SALE", { size: 4.6, cls: "mono rd" }));
+    return { door: B.x + 29, front: B.y + B.d, top: at([B.x + 29, B.y + 22, AG_H + RIDGE]) };
   }
-
-  // ---------------------------------------------------------------- 3 · workshop
-  {
-    const B = SHOP;
+  // ---------------------------------------------------------------- workshop
+  function workshop(x0, plate) {
+    const B = { x: x0, y: -40 + 0, w: 74, d: 48 };
     const fy = B.y + B.d;
     const face = [];
     const slats = [];
@@ -118,7 +117,7 @@ export function orgRow({ width = 560 } = {}) {
     out.push(cyl(B.x + 58, B.y + 14, 3.4, SHOP_H + 2.5, 10));
     // name plate
     out.push(box({ x: B.x + 8, y: fy + 1, w: 40, d: 2 }, 28, 5.5));
-    out.push(faceText("y", fy + 3, B.x + 28, 29.4, "benmacha.tn", { size: 4.4, cls: "mono ink" }));
+    out.push(faceText("y", fy + 3, B.x + 28, 29.4, plate, { size: Math.min(4.4, 64 / plate.length), cls: "mono ink" }));
     // workbench with a screen, a keyboard and a lamp
     const [wx, wy] = [B.x + 44, fy + 14];
     for (const [x, y] of [[wx + 1, wy + 1], [wx + 25, wy + 1], [wx + 1, wy + 9], [wx + 25, wy + 9]]) out.push(box({ x, y, w: 2, d: 2 }, 0, 12));
@@ -130,8 +129,20 @@ export function orgRow({ width = 560 } = {}) {
     out.push(line(k.pathOf([at([wx + 23, wy + 4, 14]), at([wx + 23, wy + 4, 24]), at([wx + 18, wy + 6, 27])]), ""));
     out.push(cyl(wx + 23, wy + 4, 2.4, 14, 1));
     out.push(dot([wx + 18, wy + 6, 26.5], 2, "dot g"));
+    return { door: B.x + 26, front: B.y + B.d, top: at([B.x + 64, B.y + 6, SHOP_H + 2.5]) };
   }
+  // the buildings left to right, then dashed paths between their doors along the street
+  const draw = { restaurant, agency, workshop };
+  const buildings = kinds.map((kind, i) => (draw[kind] || workshop)(BASE.x + 10 + i * SLOT + (kind === "agency" ? 12 : 0), String(plates[i] ?? "")));
+  const paths = [];
+  buildings.forEach((b, i) => {
+    if (!i) return;
+    const a = buildings[i - 1];
+    paths.push(path([[a.door, a.front + 2, 0], [a.door, 36, 0], [b.door, 36, 0], [b.door, b.front + 2, 0]], i % 2 ? "g" : "r"));
+  });
+  // the paths lie on the plate: draw them right after it
+  out.splice(GROUND, 0, ...paths);
 
-  const points = [at([REST.x + 8, REST.y, REST_H + 3]), at([AG.x + AG.w / 2, AG.y + AG.d / 2, AG_H + RIDGE]), at([SHOP.x + SHOP.w - 10, SHOP.y + 6, SHOP_H + 2.5])];
+  const points = buildings.map((b) => b.top);
   return { svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}">${out.join("")}</svg>`, width, height, points };
 }

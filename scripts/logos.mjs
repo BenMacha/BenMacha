@@ -37,11 +37,16 @@ export const LOGOS = {
 const escapeText = (text) => String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 // A logo as inline SVG, `size` px square with its top left corner at (x, y), filled with the class `cls`.
-// `key` is a key of LOGOS, "database" for a drawn database mark, or "initials:XY" for letters in a rounded square.
+// `key` is a key of LOGOS, "database" or "repo" for a drawn mark, or "initials:XY" for letters in a rounded square.
 export function logoMark(key, x, y, size, cls = "logo") {
   const k = size / 24;
   const place = `transform="translate(${x} ${y}) scale(${Math.round(k * 1000) / 1000})"`;
   if (key && LOGOS[key]) return `<path class="${cls}" fill-rule="evenodd" ${place} d="${LOGOS[key].d}"/>`;
+  if (key === "repo") {
+    // a neutral repository mark (a bound book) for projects found without a logo
+    const d = "M5 1.5h14a1 1 0 0 1 1 1v16.5H7.6a1.6 1.6 0 0 0 0 3.2H20V24H7.6A3.6 3.6 0 0 1 4 20.4V2.5a1 1 0 0 1 1-1zm1.5 2v13.4a3.6 3.6 0 0 1 1.1-.2H18V3.5zM9 6h7v1.6H9zm0 3.2h5v1.6H9z";
+    return `<path class="${cls}" fill-rule="evenodd" ${place} d="${d}"/>`;
+  }
   if (key === "database") {
     // three stacked discs of a database, in the same 24 x 24 box
     const d =

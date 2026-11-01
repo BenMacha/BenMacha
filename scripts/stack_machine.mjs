@@ -4,9 +4,10 @@
 // rail names each section; the lamp of Symfony, used every day, is lit green.
 //
 // Usage: node scripts/stack_machine.mjs [out.svg]   (default profile-contrib/stack.svg)
+// The shelves come from profile-contrib/profile.json ("stack").
 // Node 20+, built-ins only. The figure kit is in scripts/anatomy-book/.
 
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import { stackRack } from "./anatomy-book/stack-rack.mjs";
 import { callout, compact, page, place } from "./anatomy-book/theme.mjs";
@@ -14,42 +15,11 @@ import { logoMark } from "./logos.mjs";
 
 const output = process.argv[2] || "profile-contrib/stack.svg";
 
-// ---------------------------------------------------------------- the stack, shelf by shelf (top first)
-// logo: a key of scripts/logos.mjs, or "initials:XY" when Simple Icons has no mark for it.
-const SHELVES = [
-  [
-    {
-      label: "Backend",
-      items: [
-        ["PHP", "php"], ["Symfony", "symfony"], ["Laravel", "laravel"], ["Node.js", "nodedotjs"],
-        ["Python", "python"], ["API Platform", "apiplatform"], ["PHPUnit", "initials:PU"], ["Codeception", "initials:CC"],
-      ],
-    },
-  ],
-  [
-    {
-      label: "Frontend",
-      items: [
-        ["React", "react"], ["Next.js", "nextdotjs"], ["Vue.js", "vuedotjs"], ["Nuxt.js", "nuxtdotjs"], ["JavaScript", "javascript"],
-        ["Tailwind CSS", "tailwindcss"], ["Ionic", "ionic"], ["Capacitor", "capacitor"], ["Flutter", "flutter"], ["Cypress", "cypress"],
-      ],
-    },
-  ],
-  [
-    {
-      label: "DevOps & Tools",
-      items: [
-        ["Docker", "docker"], ["Traefik", "traefikproxy"], ["Jenkins", "jenkins"], ["Postfix", "initials:PF"],
-        ["GitHub Actions", "githubactions"], ["Linux", "linux"], ["Nginx", "nginx"], ["Apache", "apache"],
-      ],
-    },
-  ],
-  [
-    { label: "Database", items: [["MySQL", "mysql"], ["Redis", "redis"], ["MariaDB", "mariadb"]] },
-    { label: "IDE & Development", items: [["PhpStorm", "phpstorm"], ["VS Code", "initials:VS"], ["Git", "git"], ["GitHub", "github"]] },
-  ],
-];
-const LIT = "Symfony";
+// ---------------------------------------------------------------- the stack, from profile-contrib/profile.json
+// shelves top first; logo: a key of scripts/logos.mjs, or "initials:XY" when Simple Icons has no mark for it.
+const profile = JSON.parse(readFileSync(process.env.PROFILE_JSON || "profile-contrib/profile.json", "utf8"));
+const SHELVES = profile.stack.shelves;
+const LIT = profile.stack.lit || "";
 const ALL = SHELVES.flat().flatMap((g) => g.items.map(([name]) => name));
 const GROUPS = SHELVES.flat().length;
 

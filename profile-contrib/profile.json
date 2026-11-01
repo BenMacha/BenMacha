@@ -1,0 +1,82 @@
+{
+  "login": "BenMacha",
+  "organizations": [
+    {
+      "name": "Pepprio",
+      "what": "Restaurant order management",
+      "building": "restaurant",
+      "links": [
+        { "label": "github.com/pepprio", "url": "https://github.com/pepprio" },
+        { "label": "pepprio.com", "url": "https://pepprio.com/" }
+      ]
+    },
+    {
+      "name": "Pignelle",
+      "what": "Tools for real estate agencies",
+      "building": "agency",
+      "links": [
+        { "label": "github.com/Pignelle", "url": "https://github.com/Pignelle" },
+        { "label": "pignelle.com", "url": "https://pignelle.com" }
+      ]
+    },
+    {
+      "name": "BenMacha",
+      "what": "Personal workshop",
+      "building": "workshop",
+      "plate": "benmacha.tn",
+      "links": [
+        { "label": "github.com/BenMacha", "url": "https://github.com/BenMacha" },
+        { "label": "benmacha.tn", "url": "https://benmacha.tn/" }
+      ]
+    }
+  ],
+  "stack": {
+    "lit": "Symfony",
+    "shelves": [
+      [
+        { "label": "Backend", "items": [["PHP", "php"], ["Symfony", "symfony"], ["Laravel", "laravel"], ["Node.js", "nodedotjs"], ["Python", "python"], ["API Platform", "apiplatform"], ["PHPUnit", "initials:PU"], ["Codeception", "initials:CC"]] }
+      ],
+      [
+        { "label": "Frontend", "items": [["React", "react"], ["Next.js", "nextdotjs"], ["Vue.js", "vuedotjs"], ["Nuxt.js", "nuxtdotjs"], ["JavaScript", "javascript"], ["Tailwind CSS", "tailwindcss"], ["Ionic", "ionic"], ["Capacitor", "capacitor"], ["Flutter", "flutter"], ["Cypress", "cypress"]] }
+      ],
+      [
+        { "label": "DevOps & Tools", "items": [["Docker", "docker"], ["Traefik", "traefikproxy"], ["Jenkins", "jenkins"], ["Postfix", "initials:PF"], ["GitHub Actions", "githubactions"], ["Linux", "linux"], ["Nginx", "nginx"], ["Apache", "apache"]] }
+      ],
+      [
+        { "label": "Database", "items": [["MySQL", "mysql"], ["Redis", "redis"], ["MariaDB", "mariadb"]] },
+        { "label": "IDE & Development", "items": [["PhpStorm", "phpstorm"], ["VS Code", "initials:VS"], ["Git", "git"], ["GitHub", "github"]] }
+      ]
+    ]
+  },
+  "packages": {
+    "vendor": "benmacha",
+    "exclude": [],
+    "overrides": {
+      "benmacha/diagram-bundle": { "what": "Doctrine ERD studio" },
+      "benmacha/mousetracker": { "what": "Heatmaps, session replay" },
+      "benmacha/audit-bundle": { "what": "Entity audit, rollback" },
+      "benmacha/templatebundle": { "what": "CRUD generator" }
+    },
+    "also": "Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Connect, user management and audit logging for Symfony), [omnimail-mcp](https://github.com/BenMacha/omnimail-mcp) (open source multi-account mail MCP server: iCloud, Gmail, Outlook, Yahoo, Proton, Infomaniak, IMAP), and the [Uber Eats PHP SDK](https://github.com/BenMacha/ubereat-php), now maintained as `pepprio/uber-eats-sdk-php`."
+  },
+  "contributions": {
+    "exclude_owners": ["BenMacha", "pepprio", "Pignelle"],
+    "exclude_repos": [],
+    "order": ["symfony/symfony", "api-platform/core", "api-platform/api-platform", "caddyserver/caddy", "ccmbenchmark/ting"],
+    "overrides": {
+      "symfony/symfony": { "name": "Symfony", "logo": "symfony" },
+      "api-platform/core": { "name": "API Platform", "logo": "apiplatform" },
+      "api-platform/api-platform": { "name": "API Platform installer", "logo": "apiplatform" },
+      "caddyserver/caddy": { "name": "Caddy", "logo": "caddy" },
+      "ccmbenchmark/ting": {
+        "name": "Ting",
+        "logo": "database",
+        "suffix": " (CCM Benchmark ORM)",
+        "notes": [
+          "[#120](https://github.com/ccmbenchmark/ting/issues/120) reported an SQL injection in the PostgreSQL driver, fixed upstream in 4.1.1"
+        ]
+      },
+      "ccmbenchmark/ting_api_platform": { "name": "Ting for API Platform", "logo": "database" }
+    }
+  }
+}

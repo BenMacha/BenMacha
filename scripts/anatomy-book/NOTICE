@@ -4,7 +4,7 @@ provides the isometric camera, the solids and the SVG string helpers used by the
 folder.
 
 theme.mjs (the book page, palettes and callouts), draw.mjs (the line-drawing parts) and the scene
-modules pr-line.mjs, stack-rack.mjs, org-row.mjs, crate-shelf.mjs and contrib-grid.mjs are specific
+modules pr-line.mjs, card-index.mjs, stack-rack.mjs, org-row.mjs, crate-shelf.mjs and contrib-grid.mjs are specific
 to this profile; they follow the "technical book" design of benmacha.tn.
 
 The fonts in fonts/ are latin subsets, as served by Google Fonts, embedded in each generated SVG,

@@ -114,7 +114,7 @@ const H = Math.round(Math.max(ly + 14, langBottom) + 52);
 const svg = page({
   width: W,
   height: H,
-  fig: 5,
+  fig: 6,
   chapter: "05",
   title: "GitHub activity",
   caption: "Contribution plate: one cell per day, block height = contributions.",

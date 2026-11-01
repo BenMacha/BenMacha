@@ -7,34 +7,31 @@
 // Usage: node scripts/orgs_machine.mjs [out.svg]   (default profile-contrib/orgs.svg)
 // Node 20+, built-ins only. The figure kit is in scripts/anatomy-book/.
 
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import { orgRow } from "./anatomy-book/org-row.mjs";
 import { callout, compact, esc, page, place } from "./anatomy-book/theme.mjs";
 
 const output = process.argv[2] || "profile-contrib/orgs.svg";
 
-const ORGS = [
-  { name: "Pepprio", what: "Restaurant order management", links: ["github.com/pepprio", "pepprio.com"], ink: "rd" },
-  { name: "Pignelle", what: "Tools for real estate agencies", links: ["github.com/Pignelle", "pignelle.com"], ink: "ink" },
-  { name: "BenMacha", what: "Personal workshop", links: ["github.com/BenMacha", "benmacha.tn"], ink: "gr" },
-];
+// The organizations come from profile-contrib/profile.json ("organizations"): name, what, building
+// (restaurant, agency or workshop), plate (the name plate, default the name) and links.
+const profile = JSON.parse(readFileSync(process.env.PROFILE_JSON || "profile-contrib/profile.json", "utf8"));
+const INKS = ["rd", "ink", "gr"];
+const ORGS = profile.organizations.map((o, i) => ({ ...o, links: (o.links || []).map((l) => l.label), ink: INKS[i % 3] }));
 
 const W = 840;
 const SIDE = 250;
-const label = "Three small isometric buildings on one base plate, linked by dashed paths: the Pepprio restaurant with a striped awning and a service counter (restaurant order management, pepprio.com), the Pignelle real-estate agency under a gable roof with a for-sale board (tools for real estate agencies, pignelle.com), and Ben Macha's workshop with a workbench, a screen and a lamp (benmacha.tn, github.com/BenMacha).";
+const LOOK = { restaurant: "a restaurant with a striped awning and a service counter", agency: "an agency under a gable roof with a for-sale board", workshop: "a workshop with a workbench, a screen and a lamp" };
+const label = `${ORGS.length} small isometric buildings on one base plate, linked by dashed paths: ${ORGS.map((o) => `${o.name}, ${LOOK[o.building] || LOOK.workshop} (${o.what.toLowerCase()}, ${o.links.join(", ")})`).join("; ")}.`;
 const AX = SIDE + 20;
 const AW = W - AX - 22;
-const scene = orgRow({ width: AW });
+const scene = orgRow({ kinds: ORGS.map((o) => o.building), plates: ORGS.map((o) => o.plate || o.name), width: AW });
 const AY = 84;
 const art = place(scene.svg, AX, AY, AW);
 const s = AW / scene.width;
 const pt = ([x, y]) => [AX + x * s, AY + y * s];
-const C = [
-  callout(1, pt(scene.points[0]), [AX + 20, 66], "restaurant"),
-  callout(2, pt(scene.points[1]), [AX + 210, 66], "agency"),
-  callout(3, pt(scene.points[2]), [W - 110, 66], "workshop"),
-];
+const C = scene.points.map((p, i) => callout(i + 1, pt(p), [AX + 20 + (i * (AW - 120)) / Math.max(1, ORGS.length - 1), 66], ORGS[i].building || "workshop"));
 const H = Math.round(AY + art.h + 52);
 
 const L = [];
@@ -56,7 +53,7 @@ const svg = page({
   fig: 1,
   chapter: "01",
   title: "Organizations & projects",
-  caption: "Three workshops on one plate: restaurant orders, real estate, personal.",
+  caption: `${ORGS.length} buildings on one plate, one per organization, linked by paths.`,
   heading: "Organizations and projects",
   label,
   body: L.join("") + art.svg + C.join(""),

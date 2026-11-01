@@ -1,6 +1,33 @@
 {
-  "benmacha/diagram-bundle": 64,
-  "benmacha/mousetracker": 59,
-  "benmacha/audit-bundle": 4,
-  "benmacha/templatebundle": 147
+  "vendor": "benmacha",
+  "packages": [
+    {
+      "name": "benmacha/diagram-bundle",
+      "downloads": 64,
+      "description": "Interactive Doctrine entity diagram for Symfony: JSON API + React studio usable from Twig, plain JS, React and Vue.",
+      "repository": "https://github.com/BenMacha/diagram-bundle",
+      "what": "Doctrine ERD studio"
+    },
+    {
+      "name": "benmacha/mousetracker",
+      "downloads": 59,
+      "description": "Self-hosted mouse, click and scroll tracker for Symfony: heatmaps, scroll maps and session replay. React dashboard usable from Twig, plain JS, React and Vue.",
+      "repository": "https://github.com/BenMacha/mouseTracker",
+      "what": "Heatmaps, session replay"
+    },
+    {
+      "name": "benmacha/audit-bundle",
+      "downloads": 4,
+      "description": "A comprehensive Symfony bundle for auditing entity changes with rollback functionality, web interface, and REST API",
+      "repository": "https://github.com/BenMacha/audit-bundle",
+      "what": "Entity audit, rollback"
+    },
+    {
+      "name": "benmacha/templatebundle",
+      "downloads": 147,
+      "description": "Symfony Template Bundle",
+      "repository": "https://github.com/BenMacha/Templatebundle",
+      "what": "CRUD generator"
+    }
+  ]
 }

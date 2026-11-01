@@ -3,28 +3,36 @@ I'm a **Full Stack Developer** passionate about web and mobile development, spec
 
 ## 🏢 Organizations & Projects
 
-![Organizations and projects: Pepprio (restaurant order management), Pignelle (tools for real estate agencies) and Ben Macha Ali (benmacha.tn, github.com/BenMacha)](profile-contrib/orgs.svg)
+<!-- ORGS:START -->
+![Organizations and projects: Pepprio (restaurant order management, github.com/pepprio, pepprio.com), Pignelle (tools for real estate agencies, github.com/Pignelle, pignelle.com), BenMacha (personal workshop, github.com/BenMacha, benmacha.tn)](profile-contrib/orgs.svg)
 
 [Pepprio](https://github.com/pepprio) · [pepprio.com](https://pepprio.com/) — [Pignelle](https://github.com/Pignelle) · [pignelle.com](https://pignelle.com) — [BenMacha](https://github.com/BenMacha) · [benmacha.tn](https://benmacha.tn/)
+<!-- ORGS:END -->
 
 ## 🛠️ Tech Stack & Skills
 
-![Tech stack. Backend: PHP, Symfony, Laravel, Node.js, Python, API Platform, PHPUnit, Codeception. Frontend: React, Next.js, Vue.js, Nuxt.js, JavaScript, Tailwind CSS, Ionic, Capacitor, Flutter, Cypress. DevOps and tools: Docker, Traefik, Jenkins, Postfix, GitHub Actions, Linux, Nginx, Apache. Database: MySQL, Redis, MariaDB. IDE and development: PhpStorm, VS Code, Git, GitHub.](profile-contrib/stack.svg)
+<!-- STACK:START -->
+![Tech stack. Backend: PHP, Symfony, Laravel, Node.js, Python, API Platform, PHPUnit, Codeception. Frontend: React, Next.js, Vue.js, Nuxt.js, JavaScript, Tailwind CSS, Ionic, Capacitor, Flutter, Cypress. DevOps & Tools: Docker, Traefik, Jenkins, Postfix, GitHub Actions, Linux, Nginx, Apache. Database: MySQL, Redis, MariaDB. IDE & Development: PhpStorm, VS Code, Git, GitHub.](profile-contrib/stack.svg)
+<!-- STACK:END -->
 
 ## 📦 Packages
 
-![Packages on Packagist: benmacha/diagram-bundle, an interactive Doctrine ERD for Symfony; benmacha/mousetracker, self-hosted heatmaps, scroll maps and session replay; benmacha/audit-bundle, an audit trail of Doctrine entities with rollback; benmacha/templatebundle, a CRUD interface generator](profile-contrib/packages.svg)
+<!-- PACKAGES:START -->
+![Packages on Packagist: benmacha/diagram-bundle, Interactive Doctrine entity diagram for Symfony: JSON API + React studio usable from Twig, plain JS, React and Vue; benmacha/mousetracker, Self-hosted mouse, click and scroll tracker for Symfony: heatmaps, scroll maps and session replay. React dashboard usable from Twig, plain JS, React and Vue; benmacha/audit-bundle, A comprehensive Symfony bundle for auditing entity changes with rollback functionality, web interface, and REST API; benmacha/templatebundle, Symfony Template Bundle](profile-contrib/packages.svg)
 
 [diagram-bundle](https://github.com/BenMacha/diagram-bundle) · [mousetracker](https://github.com/BenMacha/mouseTracker) · [audit-bundle](https://github.com/BenMacha/audit-bundle) · [templatebundle](https://github.com/BenMacha/Templatebundle) · [all on Packagist](https://packagist.org/packages/benmacha/)
 
 Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Connect, user management and audit logging for Symfony), [omnimail-mcp](https://github.com/BenMacha/omnimail-mcp) (open source multi-account mail MCP server: iCloud, Gmail, Outlook, Yahoo, Proton, Infomaniak, IMAP), and the [Uber Eats PHP SDK](https://github.com/BenMacha/ubereat-php), now maintained as `pepprio/uber-eats-sdk-php`.
+<!-- PACKAGES:END -->
 
 ## 🤝 Open Source Contributions
 
 <!-- CONTRIBUTIONS:START -->
 ![Open source pull request line: pull requests reviewed, merged or under review](profile-contrib/pr-machine.svg)
 
-15 merged pull requests so far, updated hourly.
+![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
+
+16 merged pull requests so far, updated hourly.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
@@ -92,6 +100,12 @@ Under review (3):
 - [#137](https://github.com/ccmbenchmark/ting/pull/137) **ci**: fix the lowest-deps job, add PHP 8.5, composer audit, Dependabot, issue template and security policy
 - [#136](https://github.com/ccmbenchmark/ting/pull/136) **security**: escape SQL identifiers, validate order keys, quote the Pgsql DSN and check timezones
 - [#123](https://github.com/ccmbenchmark/ting/pull/123) Fix #122: Missing Return Statement in PostgreSQL Driver
+
+### [Ting for API Platform](https://github.com/ccmbenchmark/ting_api_platform)
+
+Merged (1):
+
+- [#18](https://github.com/ccmbenchmark/ting_api_platform/pull/18) add enum filter
 <!-- CONTRIBUTIONS:END -->
 
 ## 🌍 [Personal Portfolio](https://github.com/BenMacha/benmacha.github.io)

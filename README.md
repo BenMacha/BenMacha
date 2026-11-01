@@ -50,11 +50,30 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 - **RateLimiter**
   - [#67705](https://github.com/symfony/symfony/pull/67705) validate the refill amount, the fixed window interval and the sliding window limit
 
-Branch 6.4 unless noted, merged up to 7.4, 8.1 and 8.2. [In review](https://github.com/symfony/symfony/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): Form and Messenger fixes.
+Branch 6.4 unless noted, merged up to 7.4, 8.1 and 8.2.
+
+Under review:
+
+- [#67699](https://github.com/symfony/symfony/pull/67699) **Form**: validate the entries renumbered by the `keep_as_list` option of `CollectionType` (7.4)
+- [#67712](https://github.com/symfony/symfony/pull/67712) **Messenger**: stop keeping alive the messages that a listener prevents the worker from handling (7.4)
 
 ### [API Platform](https://github.com/api-platform/core)
 
-[In review](https://github.com/api-platform/core/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): Doctrine filters, JSON-LD / JSON:API denormalization, GraphQL pagination cursors and Laravel HTTP cache fixes on 5.0, plus two [installer](https://github.com/api-platform/api-platform/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen) fixes.
+Under review, branch 5.0:
+
+- [#8775](https://github.com/api-platform/core/pull/8775) **Doctrine**: ignore nested array values in range and search filters
+- [#8776](https://github.com/api-platform/core/pull/8776) **Doctrine**: reject too large pages with ODM partial pagination
+- [#8777](https://github.com/api-platform/core/pull/8777) **Doctrine**: left join collection associations in `IriFilter` inside OR groups
+- [#8778](https://github.com/api-platform/core/pull/8778) **Serializer**: reject a non-string id in JSON-LD and JSON:API relations
+- [#8779](https://github.com/api-platform/core/pull/8779) **State**: reject invalid GraphQL pagination cursors
+- [#8780](https://github.com/api-platform/core/pull/8780) **Serializer**: unwrap the collection key type, not the collection type
+- [#8781](https://github.com/api-platform/core/pull/8781) **Laravel**: ignore non-string values in search filters
+- [#8782](https://github.com/api-platform/core/pull/8782) **Laravel**: purge the HTTP cache on GraphQL mutations
+
+[Installer](https://github.com/api-platform/api-platform), under review:
+
+- [#3023](https://github.com/api-platform/api-platform/pull/3023) print the release version
+- [#3024](https://github.com/api-platform/api-platform/pull/3024) validate the `--symfony-docker-ref` value
 
 ### [Ting](https://github.com/ccmbenchmark/ting) (CCM Benchmark ORM)
 

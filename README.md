@@ -24,14 +24,15 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 <!-- CONTRIBUTIONS:START -->
 ![Open source pull requests machine](profile-contrib/pr-machine.svg)
 
-14 merged pull requests so far, updated hourly.
+15 merged pull requests so far, updated hourly.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
-Merged (14):
+Merged (15):
 
 - [#67723](https://github.com/symfony/symfony/pull/67723) **Security**: Do not request a re-authentication that cannot prove a recent authentication
 - [#67722](https://github.com/symfony/symfony/pull/67722) **Messenger**: Ignore ids that are not integers when finding a message of the Doctrine transport
+- [#67712](https://github.com/symfony/symfony/pull/67712) **Messenger**: Stop keeping alive the messages that a listener prevents the worker from handling
 - [#67711](https://github.com/symfony/symfony/pull/67711) **Messenger**: Do not resend the stamp headers of a received AMQP message
 - [#67710](https://github.com/symfony/symfony/pull/67710) **Messenger**: Do not expose the Redis DSN in the invalid host query parameter exception
 - [#67709](https://github.com/symfony/symfony/pull/67709) **Messenger**: Restore the schema assets filter when the Doctrine transport setup fails
@@ -45,9 +46,8 @@ Merged (14):
 - [#67701](https://github.com/symfony/symfony/pull/67701) **Form**: Fix the post_max_size check when it is set to a negative value
 - [#67700](https://github.com/symfony/symfony/pull/67700) **Form**: Ignore collection entries with invalid names when allow_add is enabled
 
-Under review (2):
+Under review (1):
 
-- [#67712](https://github.com/symfony/symfony/pull/67712) **Messenger**: Stop keeping alive the messages that a listener prevents the worker from handling
 - [#67699](https://github.com/symfony/symfony/pull/67699) **Form**: Validate the entries renumbered by the keep_as_list option of CollectionType
 
 ### [API Platform](https://github.com/api-platform/core)

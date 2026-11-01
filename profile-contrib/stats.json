@@ -1,11 +1,11 @@
 {
-  "merged": 14,
-  "review": 23,
+  "merged": 15,
+  "review": 22,
   "projects": [
     {
       "name": "Symfony",
-      "merged": 14,
-      "review": 2,
+      "merged": 15,
+      "review": 1,
       "logo": "symfony"
     },
     {

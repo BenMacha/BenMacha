@@ -112,7 +112,7 @@ def section(stats):
             out += [line(p) for p in sorted(review, key=lambda p: p["number"], reverse=True)]
             out.append("")
     head = (
-        f"![Open source pull requests machine]({MACHINE})\n\n"
+        f"![Open source pull request line: pull requests reviewed, merged or under review]({MACHINE})\n\n"
         f"{total_merged} merged pull requests so far, updated hourly.\n"
     )
     return head + "\n" + "\n".join(out).rstrip() + "\n"

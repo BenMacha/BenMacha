@@ -22,7 +22,7 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 ## 🤝 Open Source Contributions
 
 <!-- CONTRIBUTIONS:START -->
-![Open source pull requests machine](profile-contrib/pr-machine.svg)
+![Open source pull request line: pull requests reviewed, merged or under review](profile-contrib/pr-machine.svg)
 
 15 merged pull requests so far, updated hourly.
 
@@ -98,7 +98,7 @@ Under review (3):
 A professional multilingual portfolio built with **Vue.js 3, TypeScript, and Tailwind CSS** showcasing my work and experience.
 
 ## 📈 GitHub Stats
-![GitHub Stats](https://github.com/BenMacha/BenMacha/blob/main/profile-3d-contrib/profile-gitblock.svg)
+![GitHub stats: the contribution calendar of the last 52 weeks as an isometric plate of blocks, counters and top languages](profile-contrib/github-stats.svg)
 
 ## 📝 Contact
 - 🌍 Website: [https://benmacha.tn](https://benmacha.tn)

@@ -1,0 +1,14 @@
+iso-kit.mjs comes from Anatomy (https://github.com/wheresryan22/anatomy), file kit/iso-kit.mjs,
+copied without changes (apart from its two-line header) under the MIT License (see LICENSE). It
+provides the isometric camera, the solids and the SVG string helpers used by the figures in this
+folder.
+
+theme.mjs (the book page, palettes and callouts), draw.mjs (the line-drawing parts) and the scene
+modules pr-line.mjs, stack-rack.mjs, org-row.mjs, crate-shelf.mjs and contrib-grid.mjs are specific
+to this profile; they follow the "technical book" design of benmacha.tn.
+
+The fonts in fonts/ are latin subsets, as served by Google Fonts, embedded in each generated SVG,
+all licensed under the SIL Open Font License 1.1:
+- Nunito ExtraBold, by The Nunito Project Authors (fonts/OFL-Nunito.txt)
+- Mulish Regular and Bold, by The Mulish Project Authors (fonts/OFL-Mulish.txt)
+- JetBrains Mono Regular, by The JetBrains Mono Project Authors (fonts/OFL-JetBrainsMono.txt)

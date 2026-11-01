@@ -75,6 +75,19 @@ Under review, branch 5.0:
 - [#3023](https://github.com/api-platform/api-platform/pull/3023) print the release version
 - [#3024](https://github.com/api-platform/api-platform/pull/3024) validate the `--symfony-docker-ref` value
 
+### [Caddy](https://github.com/caddyserver/caddy)
+
+Under review:
+
+- [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices
+- [#8317](https://github.com/caddyserver/caddy/pull/8317) **admin**: authorize remote requests matching any permission entry
+- [#8318](https://github.com/caddyserver/caddy/pull/8318) **reverseproxy**: close upstream body when `handle_response` status is invalid
+- [#8319](https://github.com/caddyserver/caddy/pull/8319) **caddyhttp**: keep placeholder names intact in path matcher
+- [#8320](https://github.com/caddyserver/caddy/pull/8320) **reverseproxy**: skip unavailable upstream with a single `weighted_round_robin` weight
+- [#8321](https://github.com/caddyserver/caddy/pull/8321) **fastcgi**: skip params whose name cannot fit in a record
+- [#8322](https://github.com/caddyserver/caddy/pull/8322) **fileserver**: handle empty files in size try policies
+- [#8323](https://github.com/caddyserver/caddy/pull/8323) **logging**: close the redialed conn when writing to it fails
+
 ### [Ting](https://github.com/ccmbenchmark/ting) (CCM Benchmark ORM)
 
 - [#120](https://github.com/ccmbenchmark/ting/issues/120) reported an SQL injection in the PostgreSQL driver, fixed upstream in 4.1.1

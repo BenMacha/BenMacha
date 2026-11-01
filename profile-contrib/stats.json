@@ -5,27 +5,32 @@
     {
       "name": "Symfony",
       "merged": 14,
-      "review": 2
+      "review": 2,
+      "logo": "symfony"
     },
     {
       "name": "API Platform",
       "merged": 0,
-      "review": 8
+      "review": 8,
+      "logo": "initials:AP"
     },
     {
       "name": "API Platform installer",
       "merged": 0,
-      "review": 2
+      "review": 2,
+      "logo": "initials:AP"
     },
     {
       "name": "Caddy",
       "merged": 0,
-      "review": 8
+      "review": 8,
+      "logo": "caddy"
     },
     {
       "name": "Ting",
       "merged": 0,
-      "review": 3
+      "review": 3,
+      "logo": "database"
     }
   ]
 }

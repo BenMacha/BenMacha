@@ -2,7 +2,8 @@ name: Open source contributions
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    # Hourly: a pull request merged in another repository cannot trigger this one.
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -19,11 +20,17 @@ jobs:
         run: python3 scripts/contributions.py
       - name: Draw the pull request machine
         run: node scripts/pr_machine.mjs profile-contrib/stats.json
+      - name: Draw the tech stack, the organizations and the packages
+        run: |
+          node scripts/stack_machine.mjs
+          node scripts/orgs_machine.mjs
+          node scripts/packages_machine.mjs profile-contrib/packages.json
       - name: Commit & Push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add README.md profile-contrib
+          # Commits only when the README or a drawing changed.
           if git commit -m "Update open source contributions"; then
             git push
           fi

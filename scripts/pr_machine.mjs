@@ -12,6 +12,8 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import * as k from "./anatomy/iso-kit.mjs";
+import { logoMark } from "./logos.mjs";
+import { BASE_CSS, compact } from "./theme.mjs";
 
 const input = process.argv[2];
 const output = process.argv[3] || "profile-contrib/pr-machine.svg";
@@ -24,7 +26,7 @@ if (!input) {
 const raw = JSON.parse(readFileSync(input, "utf8"));
 const count = (value) => Math.max(0, Math.floor(Number(value) || 0));
 const projects = (Array.isArray(raw.projects) ? raw.projects : [])
-  .map((p) => ({ name: String(p.name ?? "").trim() || "?", merged: count(p.merged), review: count(p.review) }))
+  .map((p) => ({ name: String(p.name ?? "").trim() || "?", merged: count(p.merged), review: count(p.review), logo: String(p.logo ?? "") }))
   .filter((p) => p.merged || p.review);
 const MERGED = raw.merged !== undefined ? count(raw.merged) : projects.reduce((s, p) => s + p.merged, 0);
 const REVIEW = raw.review !== undefined ? count(raw.review) : projects.reduce((s, p) => s + p.review, 0);
@@ -161,7 +163,10 @@ function hopper() {
   out.push(S(slab(body, 4, HOPPER_H - 4, 3, 0.8), { tone: "mid", inner: seam }));
   // label plate on the front face, three rule lines standing for text
   const plate = faceRect("y", body.y + body.d, body.x + 8, 15, 22, 12, 1);
-  out.push(`<path class="iso-line" data-tone="lo" d="${poly(plate)}"/>`);
+  out.push(`<path class="tc c-orange" d="${poly(plate)}"/>`, `<path class="iso-line" data-tone="lo" d="${poly(plate)}"/>`);
+  const band = [[body.x, body.y + body.d, 6], [body.x + body.w, body.y + body.d, 6], [body.x + body.w, body.y + body.d, 9], [body.x, body.y + body.d, 9]];
+  const bandSide = [[body.x + body.w, body.y + body.d, 6], [body.x + body.w, body.y, 6], [body.x + body.w, body.y, 9], [body.x + body.w, body.y + body.d, 9]];
+  out.push(`<path class="fc c-orange" d="${poly(band)}${poly(bandSide)}"/>`);
   const rules = [[body.x + 11, body.x + 26], [body.x + 11, body.x + 22], [body.x + 11, body.x + 24]];
   rules.forEach(([a, b], i) => out.push(L(k.segment([a, body.y + body.d, 24 - i * 3], [b, body.y + body.d, 24 - i * 3], P), { tone: "lo", free: true })));
   out.push(D([at([body.x + 9.6, body.y + body.d, 25.4]), at([body.x + 28.4, body.y + body.d, 25.4])], { size: 0.45 }));
@@ -200,6 +205,7 @@ function motor() {
   const box = { x: plan.x + 6, y: plan.y + 4, w: 12, d: 10, r: 1 };
   out.push(S(slab(box, 24, 6, 2, 0.4), { tone: "mid" }));
   out.push(D(k.corners(box, 2).map(([x, y]) => at([x, y, 30])), { size: 0.4 }));
+  out.push(`<path class="fc c-yellow lamp" d="${k.ring(box.x + box.w / 2, box.y + box.d / 2, 1.6, 30, P, 12)}"/>`);
   out.push(S(k.cylinder(plan.x + plan.w - 8, plan.y + plan.d / 2, 4, 24, 3, P, 20), { tone: "mid" }));
   // coupling block to the drive roller
   out.push(S(slab({ x: plan.x + plan.w - 16, y: plan.y + plan.d, w: 10, d: BELT_Y - 22 - plan.y - plan.d + 1, r: 1 }, 12, 8, 2, 0.4), { tone: "mid" }));
@@ -219,8 +225,8 @@ function post([x, y]) {
 function legs(y) {
   const out = [];
   for (const x of [-168, -40, 112]) {
-    out.push(S(slab({ x: x - 4, y: y - 4, w: 8, d: 8, r: 1.2 }, 0, 1.4, 1), { tone: "lo" }));
-    out.push(S(slab({ x: x - 2.2, y: y - 2.2, w: 4.4, d: 4.4, r: 0.6 }, 1.4, RAIL_Z - 1.4, 2), { tone: "mid" }));
+    out.push(S(slab({ x: x - 2.2, y: y - 2.2, w: 4.4, d: 4.4, r: 0 }, 0, RAIL_Z, 1), { tone: "mid" }));
+    out.push(D([at([x - 3.4, y + 3.4, 0]), at([x + 3.4, y + 3.4, 0])], { size: 0.4 }));
   }
   return out.join("");
 }
@@ -240,6 +246,7 @@ function belt() {
   const clip = k.planOutline(plan, BELT_TOP, P, 1);
   const lines = [];
   for (let x = BELT.x0 - STEP; x <= BELT.x1; x += STEP / 10) lines.push(k.lineOnTop([x, plan.y], [x, plan.y + plan.d], BELT_TOP, P));
+  out.push(`<path class="tc c-blue" d="${clip}"/>`);
   out.push(`<clipPath id="beltclip"><path d="${clip}"/></clipPath><g clip-path="url(#beltclip)"><g class="cleats">${L(lines.join(""), { tone: "faint" })}</g></g>`);
   // end drums: axle caps on the +x end of the frame
   out.push(L(k.sideRing([BELT.x1, BELT_Y + 18, RAIL_Z + 5.5], 2.2, "x", P, 14), { tone: "lo" }));
@@ -339,7 +346,7 @@ function tray() {
   out.push(S(slab(TRAY, 0, 2.5, 4, 0.5), { tone: "lo" }));
   const inner = k.insetPlan(TRAY, 3);
   // floor with guide grooves
-  out.push(`<path class="iso-top" d="${k.planOutline(inner, 2.5, P, 3)}"/>`);
+  out.push(`<path class="iso-top" d="${k.planOutline(inner, 2.5, P, 3)}"/>`, `<path class="tc c-green" d="${k.planOutline(inner, 2.5, P, 3)}"/>`);
   for (let col = 1; col < 6; col++) {
     const x = inner.x + (inner.w / 6) * col;
     out.push(L(k.lineOnTop([x, inner.y], [x, inner.y + inner.d], 2.5, P), { tone: "faint" }));
@@ -372,7 +379,7 @@ function crate() {
   const t = CRATE_WALL;
   out.push(S(slab(c, 0, 3, 3, 0.5), { tone: "lo" }));
   const inner = k.insetPlan(c, t);
-  out.push(`<path class="iso-top" d="${k.planOutline(inner, 3, P, 2)}"/>`);
+  out.push(`<path class="iso-top" d="${k.planOutline(inner, 3, P, 2)}"/>`, `<path class="tc c-purple" d="${k.planOutline(inner, 3, P, 2)}"/>`);
   // back (-y) and left (-x) walls
   const wall = (plan) => S(slab(plan, 3, CRATE_H - 3, 2, 0.4), { tone: "mid", inner: L(k.sideSeam(plan, 5, P, 2), { tone: "faint" }) });
   out.push(wall({ x: c.x, y: c.y, w: c.w, d: t, r: 0.8 }));
@@ -411,13 +418,14 @@ function panel() {
   out.push(L(k.planOutline(k.insetPlan(PANEL, 2.5), PANEL_H, P, 3), { tone: "faint" }));
   out.push(D(k.corners(PANEL, 2.4).map(([x, y]) => at([x, y, PANEL_H])), { size: 0.42 }));
   const b1 = [PANEL.x + 13, PANEL.y + 15];
-  out.push(S(k.cylinder(b1[0], b1[1], 6, PANEL_H, 1.5, P, 18), { tone: "lo" }));
-  out.push(S(k.cylinder(b1[0], b1[1], 4.4, PANEL_H + 1.5, 3, P, 18, 0.4), { tone: "mid" }));
-  out.push(L(k.knurl(b1[0], b1[1], 4.4, PANEL_H + 1.5, PANEL_H + 4.5, 24, P), { tone: "faint" }));
+  out.push(S(k.cylinder(b1[0], b1[1], 6, PANEL_H, 1.5, P, 12), { tone: "lo" }));
+  out.push(S(k.cylinder(b1[0], b1[1], 4.4, PANEL_H + 1.5, 3, P, 12, 0.4), { tone: "mid" }));
+  out.push(L(k.knurl(b1[0], b1[1], 4.4, PANEL_H + 1.5, PANEL_H + 4.5, 16, P), { tone: "faint" }));
+  out.push(`<path class="fc c-red" d="${k.ring(b1[0], b1[1], 3.2, PANEL_H + 4.5, P, 16)}"/>`);
   const b2 = [PANEL.x + 33, PANEL.y + 10];
-  out.push(S(k.cylinder(b2[0], b2[1], 3.4, PANEL_H, 2.4, P, 22, 0.3), { tone: "mid" }));
+  out.push(S(k.cylinder(b2[0], b2[1], 3.4, PANEL_H, 2.4, P, 12, 0.3), { tone: "mid" }));
   const b3 = [PANEL.x + 33, PANEL.y + 21];
-  out.push(S(k.cylinder(b3[0], b3[1], 3.4, PANEL_H, 2.4, P, 22, 0.3), { tone: "mid" }));
+  out.push(S(k.cylinder(b3[0], b3[1], 3.4, PANEL_H, 2.4, P, 12, 0.3), { tone: "mid" }));
   out.push(`<path class="tag merged" d="${k.ring(b2[0], b2[1], 1.6, PANEL_H + 2.4, P, 14)}"/>`);
   out.push(`<path class="tag review" d="${k.ring(b3[0], b3[1], 1.6, PANEL_H + 2.4, P, 14)}"/>`);
   return out.join("");
@@ -457,60 +465,19 @@ const delays = Array.from({ length: N }, (_, i) => `.bp${i}{animation-delay:${fi
 const motion = `
 @keyframes belt{${keys.join("")}}
 @keyframes cleat{0%{transform:translate(0,0)}${fix(MOVE * 100)}%,100%{transform:translate(${cx6}px,${cy6}px)}}
+@keyframes lamp{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes press{0%,60%{transform:translate(0,0)}70%,82%{transform:translate(${sx}px,${sy}px)}93%,100%{transform:translate(0,0)}}
 @media (prefers-reduced-motion:no-preference){
 .bp{animation:belt ${N * TAU}s ease-in-out infinite}${delays}
 .cleats{animation:cleat ${TAU}s ease-in-out infinite}
 .press{animation:press ${TAU}s ease-in-out infinite}
+.lamp{animation:lamp 2.4s ease-in-out infinite}
 }`;
 
-// ---------------------------------------------------------------- styles (light by default, dark by media query)
-const LIGHT = `--anatomy-paper:#ffffff;--anatomy-face:#ffffff;--anatomy-top:#ffffff;
---anatomy-shade-0:#d8dde2;--anatomy-shade-1:#e2e6ea;--anatomy-shade-2:#ebeef1;--anatomy-shade-3:#f3f5f7;
---anatomy-lit-top:#ffffff;--anatomy-lit-shade:#eef1f4;
---anatomy-hi:#24292f;--anatomy-mid:#848d97;--anatomy-lo:#b3bac1;--anatomy-faint:#d5dae0;--anatomy-lit:#000000;
---anatomy-halo:#8c959f;--anatomy-halo-opacity:.34;--anatomy-dot:#3d444d;--void:#e3e7eb;
---card:#ffffff;--border:#d0d7de;--text:#59636e;--strong:#1f2328;--muted:#818b98;--merged:#8250df;--review:#1a7f37;--digit:#ffffff`;
-const DARK = `--anatomy-paper:#0d1117;--anatomy-face:#161b22;--anatomy-top:#161c24;
---anatomy-shade-0:#0b0e13;--anatomy-shade-1:#0e1218;--anatomy-shade-2:#11161d;--anatomy-shade-3:#141a22;
---anatomy-lit-top:#202833;--anatomy-lit-shade:#181e27;
---anatomy-hi:#d1d9e0;--anatomy-mid:#6a737d;--anatomy-lo:#3d444d;--anatomy-faint:#262c35;--anatomy-lit:#ffffff;
---anatomy-halo:#010409;--anatomy-halo-opacity:.9;--anatomy-dot:#e6edf3;--void:#05070a;
---card:#0d1117;--border:#30363d;--text:#9198a1;--strong:#e6edf3;--muted:#656c76;--merged:#a371f7;--review:#3fb950;--digit:#e6edf3`;
 const CSS = `
-.iso{${LIGHT}}
-@media (prefers-color-scheme:dark){.iso{${DARK}}}
-.iso path,.iso circle{vector-effect:non-scaling-stroke}
-.card{fill:var(--card);stroke:var(--border)}
-.iso-fill{fill:var(--anatomy-paper);stroke:none}
-.iso-solid[data-lit]>.iso-fill{fill:var(--anatomy-face)}
-.iso-shade,.iso-top{stroke:none}
-.iso-shade[data-shade="0"]{fill:var(--anatomy-shade-0)}
-.iso-shade[data-shade="1"]{fill:var(--anatomy-shade-1)}
-.iso-shade[data-shade="2"]{fill:var(--anatomy-shade-2)}
-.iso-shade[data-shade="3"]{fill:var(--anatomy-shade-3)}
-.iso-top{fill:var(--anatomy-top)}
-.iso-solid[data-lit]>.iso-top{fill:var(--anatomy-lit-top)}
-.iso-solid[data-lit]>.iso-shade{fill:var(--anatomy-lit-shade)}
-.iso-solid[data-lit]>.iso-edge{stroke:var(--anatomy-lit)}
-.iso-halo{fill:var(--anatomy-halo);stroke:none;opacity:var(--anatomy-halo-opacity)}
-.iso-line{fill:none;stroke:var(--anatomy-lo);stroke-width:.7px;stroke-linecap:round;stroke-linejoin:round}
-.iso-line[data-tone="hi"]{stroke:var(--anatomy-hi)}
-.iso-line[data-tone="mid"]{stroke:var(--anatomy-mid)}
-.iso-line[data-tone="faint"]{stroke:var(--anatomy-faint)}
-.iso-line[data-tone="lit"]{stroke:var(--anatomy-lit)}
-.iso-dots circle{fill:var(--anatomy-dot);stroke:none;opacity:.32}
-.iso-dots[data-tone="hi"] circle{opacity:.85}
-.iso-dots[data-tone="mid"] circle{opacity:.45}
-.iso-dots[data-tone="lo"] circle{opacity:.22}
-.void{fill:var(--void);stroke:none}
-.tag{stroke:none}.tag.merged{fill:var(--merged)}.tag.review{fill:var(--review)}
+${BASE_CSS}.tag{stroke:none}.tag.merged{fill:var(--merged)}.tag.review{fill:var(--review)}
 .digits{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;font-weight:700}
 .digits.merged{fill:var(--merged)}.digits.review{fill:var(--review)}
-.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.04em;fill:var(--muted)}
-.caps{text-transform:uppercase;letter-spacing:.1em}
-.ro{fill:var(--text)}
-.sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif}
 .big{font-size:30px;font-weight:600;fill:var(--strong)}
 .unit{font-size:13px;fill:var(--text)}
 .name{font-size:13px;fill:var(--strong)}
@@ -534,10 +501,11 @@ const rowsTop = totalsY + 62;
 const ROW = 21;
 const maxRows = Math.floor((H - 46 - rowsTop) / ROW);
 const shown = projects.length > maxRows ? projects.slice(0, maxRows - 1) : projects;
-const clip = (name) => (name.length > 18 ? name.slice(0, 17) + "…" : name);
+const clip = (name) => (name.length > 16 ? name.slice(0, 15) + "…" : name);
 shown.forEach((p, i) => {
   const y = rowsTop + i * ROW;
-  ledger.push(`<text class="sans name" x="24" y="${y}">${esc(clip(p.name))}</text>`);
+  ledger.push(logoMark(p.logo || "initials:" + p.name, 24, y - 12.5, 15, "logo"));
+  ledger.push(`<text class="sans name" x="46" y="${y}">${esc(clip(p.name))}</text>`);
   ledger.push(`<text class="sans num" x="${LEDGER - 12}" y="${y}" text-anchor="end"><tspan class="${p.merged ? "m" : ""}">${p.merged}</tspan> · <tspan class="${p.review ? "r" : ""}">${p.review}</tspan></text>`);
 });
 if (shown.length < projects.length) {
@@ -548,7 +516,7 @@ if (!projects.length) ledger.push(`<text class="sans num" x="24" y="${rowsTop}">
 
 const corners = [
   `<text class="mono caps" x="${W - 22}" y="32" text-anchor="end">Open source pull requests</text>`,
-  `<text class="mono caps" x="24" y="${H - 20}">Updated daily from GitHub</text>`,
+  `<text class="mono caps" x="24" y="${H - 20}">Updated hourly from GitHub</text>`,
   `<text class="mono ro" x="${W - 22}" y="${H - 20}" text-anchor="end">${MERGED} merged · ${REVIEW} under review · ${pct} % merged</text>`,
 ];
 
@@ -588,14 +556,6 @@ ${corners.join("\n")}
 </svg>
 `;
 
-// Shorter class names and implicit line-to commands keep the file small; the drawing is unchanged.
-const SHORT = { "iso-solid": "so", "iso-fill": "fi", "iso-shade": "sh", "iso-top": "tp", "iso-line": "ln", "iso-crease": "cr", "iso-bevel": "bv", "iso-edge": "ed", "iso-dots": "dt", "iso-halo": "ha", "data-shade": "data-s", "data-tone": "data-t", "data-lit": "data-l" };
-const compact = (text) =>
-  text
-    .replace(/\b(iso-(?:solid|fill|shade|top|line|crease|bevel|edge|dots|halo)|data-(?:shade|tone|lit))\b/g, (name) => SHORT[name])
-    .replace(/ data-free="[^"]*"/g, "")
-    .replace(/(<path class="ln[^"]*") data-t="lo"/g, "$1")
-    .replace(/ d="([^"]*)"/g, (_, d) => ` d="${d.replace(/L/g, " ").replace(/ -/g, "-")}"`);
 const out = compact(svg);
 mkdirSync(dirname(output) || ".", { recursive: true });
 writeFileSync(output, out);

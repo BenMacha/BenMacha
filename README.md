@@ -28,16 +28,33 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ### [Symfony](https://github.com/symfony/symfony)
 
-Merged:
+14 merged pull requests across six components:
 
-- [#67701](https://github.com/symfony/symfony/pull/67701) **Form**: fix the `post_max_size` check when it is set to a negative value (6.4)
-- [#67702](https://github.com/symfony/symfony/pull/67702) **Form**: fix submitting `"0"` to a non-compound root form (6.4)
-- [#67704](https://github.com/symfony/symfony/pull/67704) **Cache**: fix the SQL of `PdoTagAwareAdapter` on MySQL, PostgreSQL, Oracle and SQL Server (8.2)
-- [#67709](https://github.com/symfony/symfony/pull/67709) **Messenger**: restore the schema assets filter when the Doctrine transport setup fails (6.4)
-- [#67710](https://github.com/symfony/symfony/pull/67710) **Messenger**: do not expose the Redis DSN credentials in an exception message (6.4)
-- [#67711](https://github.com/symfony/symfony/pull/67711) **Messenger**: do not resend the stamp headers of a received AMQP message (6.4)
+- **Security**
+  - [#67723](https://github.com/symfony/symfony/pull/67723) do not request a re-authentication that cannot prove a recent authentication (8.2)
+  - [#67706](https://github.com/symfony/symfony/pull/67706) reject remember-me cookies with an invalid expiration time
+  - [#67707](https://github.com/symfony/symfony/pull/67707) reject login links with an out of range `expires` parameter
+  - [#67708](https://github.com/symfony/symfony/pull/67708) ignore target and failure paths that are neither paths nor absolute URLs
+- **Messenger**
+  - [#67710](https://github.com/symfony/symfony/pull/67710) do not expose the Redis DSN credentials in an exception message
+  - [#67711](https://github.com/symfony/symfony/pull/67711) do not resend the stamp headers of a received AMQP message
+  - [#67709](https://github.com/symfony/symfony/pull/67709) restore the schema assets filter when the Doctrine transport setup fails
+  - [#67722](https://github.com/symfony/symfony/pull/67722) ignore ids that are not integers when finding a message of the Doctrine transport
+- **Form**
+  - [#67700](https://github.com/symfony/symfony/pull/67700) ignore collection entries with invalid names when `allow_add` is enabled
+  - [#67701](https://github.com/symfony/symfony/pull/67701) fix the `post_max_size` check when it is set to a negative value
+  - [#67702](https://github.com/symfony/symfony/pull/67702) fix submitting `"0"` to a non-compound root form
+- **Cache**
+  - [#67704](https://github.com/symfony/symfony/pull/67704) fix the SQL of `PdoTagAwareAdapter` on MySQL, PostgreSQL, Oracle and SQL Server (8.2)
+  - [#67703](https://github.com/symfony/symfony/pull/67703) honor the `$save` flag set by the callback in `EarlyExpirationHandler`
+- **RateLimiter**
+  - [#67705](https://github.com/symfony/symfony/pull/67705) validate the refill amount, the fixed window interval and the sliding window limit
 
-[In review](https://github.com/symfony/symfony/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): Form, Security, RateLimiter, Cache and Messenger fixes.
+Branch 6.4 unless noted, merged up to 7.4, 8.1 and 8.2. [In review](https://github.com/symfony/symfony/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): Form and Messenger fixes.
+
+### [API Platform](https://github.com/api-platform/core)
+
+[In review](https://github.com/api-platform/core/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): Doctrine filters, JSON-LD / JSON:API denormalization, GraphQL pagination cursors and Laravel HTTP cache fixes on 5.0, plus two [installer](https://github.com/api-platform/api-platform/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen) fixes.
 
 ### [Ting](https://github.com/ccmbenchmark/ting) (CCM Benchmark ORM)
 

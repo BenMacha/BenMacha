@@ -11,23 +11,40 @@ I'm a **Full Stack Developer** passionate about web and mobile development, spec
 | **DevOps & Tools** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) ![Traefik](https://img.shields.io/badge/Traefik-24A1C1?style=flat&logo=traefik&logoColor=white) ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat&logo=jenkins&logoColor=white) ![Postfix](https://img.shields.io/badge/Postfix-004880?style=flat&logo=mail&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) ![Nginx](https://img.shields.io/badge/Nginx-269539?style=flat&logo=nginx&logoColor=white) ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat&logo=apache&logoColor=white) |
 | **IDE & Development** | ![PhpStorm](https://img.shields.io/badge/PhpStorm-000000?style=flat&logo=phpstorm&logoColor=white) ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) |
 
-## 📌 Featured Projects
-### 🍽️ [UberEat PHP SDK](https://github.com/BenMacha/ubereat-php)
-A complete **PHP SDK** for UberEats API integration, including:
-- Order and menu management
-- Complete API integration
-- Detailed documentation 📖
+## 📦 Packages
 
-### 🖥 [Symfony CRUD Template Bundle](https://github.com/BenMacha/Templatebundle)
-A Symfony bundle for quickly generating CRUD interfaces, helping developers speed up project development. ⚡
+Symfony bundles published on [Packagist](https://packagist.org/packages/benmacha/):
 
-### 🖱 [Symfony Mouse Tracker](https://github.com/BenMacha/mouseTracker)
-A Symfony bundle to track **user interactions** in web applications. 🎯
+| Package | What it does | Downloads |
+| --- | --- | --- |
+| [benmacha/diagram-bundle](https://github.com/BenMacha/diagram-bundle) | Interactive Doctrine ERD for Symfony 5.4–7.x: diagram of every entity manager, JSON API, React / Vue / Web Component studio, SVG, PNG and JDL export | ![Downloads](https://img.shields.io/packagist/dt/benmacha/diagram-bundle?style=flat) |
+| [benmacha/mousetracker](https://github.com/BenMacha/mouseTracker) | Self-hosted heatmaps, scroll maps and session replay for Symfony 5.4–7.x, an open source alternative to Hotjar and Clarity | ![Downloads](https://img.shields.io/packagist/dt/benmacha/mousetracker?style=flat) |
+| [benmacha/audit-bundle](https://github.com/BenMacha/audit-bundle) | Audit trail of Doctrine entity changes with rollback, web interface and REST API | ![Downloads](https://img.shields.io/packagist/dt/benmacha/audit-bundle?style=flat) |
+| [benmacha/templatebundle](https://github.com/BenMacha/Templatebundle) | CRUD interface generator for Symfony | ![Downloads](https://img.shields.io/packagist/dt/benmacha/templatebundle?style=flat) |
 
-### 📊 [Symfony Diagram Bundle](https://github.com/BenMacha/diagram-bundle)
-A Symfony bundle for **generating diagrams** dynamically. 🔍
+Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Connect, user management and audit logging for Symfony), [omnimail-mcp](https://github.com/BenMacha/omnimail-mcp) (open source multi-account mail MCP server: iCloud, Gmail, Outlook, Yahoo, Proton, Infomaniak, IMAP), and the [Uber Eats PHP SDK](https://github.com/BenMacha/ubereat-php), now maintained as `pepprio/uber-eats-sdk-php`.
 
-### 🌍 [Personal Portfolio](https://github.com/BenMacha/benmacha.github.io)
+## 🤝 Open Source Contributions
+
+### [Symfony](https://github.com/symfony/symfony)
+
+Merged:
+
+- [#67701](https://github.com/symfony/symfony/pull/67701) **Form**: fix the `post_max_size` check when it is set to a negative value (6.4)
+- [#67702](https://github.com/symfony/symfony/pull/67702) **Form**: fix submitting `"0"` to a non-compound root form (6.4)
+- [#67704](https://github.com/symfony/symfony/pull/67704) **Cache**: fix the SQL of `PdoTagAwareAdapter` on MySQL, PostgreSQL, Oracle and SQL Server (8.2)
+- [#67709](https://github.com/symfony/symfony/pull/67709) **Messenger**: restore the schema assets filter when the Doctrine transport setup fails (6.4)
+- [#67710](https://github.com/symfony/symfony/pull/67710) **Messenger**: do not expose the Redis DSN credentials in an exception message (6.4)
+- [#67711](https://github.com/symfony/symfony/pull/67711) **Messenger**: do not resend the stamp headers of a received AMQP message (6.4)
+
+[In review](https://github.com/symfony/symfony/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): Form, Security, RateLimiter, Cache and Messenger fixes.
+
+### [Ting](https://github.com/ccmbenchmark/ting) (CCM Benchmark ORM)
+
+- [#120](https://github.com/ccmbenchmark/ting/issues/120) reported an SQL injection in the PostgreSQL driver, fixed upstream in 4.1.1
+- [In review](https://github.com/ccmbenchmark/ting/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): escaping of SQL identifiers and DSN values ([#136](https://github.com/ccmbenchmark/ting/pull/136)), CI for the lowest dependencies and PHP 8.5 ([#137](https://github.com/ccmbenchmark/ting/pull/137)), missing return in the PostgreSQL driver ([#123](https://github.com/ccmbenchmark/ting/pull/123))
+
+## 🌍 [Personal Portfolio](https://github.com/BenMacha/benmacha.github.io)
 A professional multilingual portfolio built with **Vue.js 3, TypeScript, and Tailwind CSS** showcasing my work and experience.
 
 ## 📈 GitHub Stats

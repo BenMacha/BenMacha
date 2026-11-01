@@ -18,6 +18,8 @@ from html import escape
 AUTHOR = os.environ.get("CONTRIB_AUTHOR", "BenMacha")
 README = os.environ.get("CONTRIB_README", "README.md")
 SVG = os.environ.get("CONTRIB_SVG", "profile-contrib/prs.svg")
+STATS = os.environ.get("CONTRIB_STATS", "profile-contrib/stats.json")
+MACHINE = os.environ.get("CONTRIB_MACHINE", "profile-contrib/pr-machine.svg")
 START = "<!-- CONTRIBUTIONS:START -->"
 END = "<!-- CONTRIBUTIONS:END -->"
 
@@ -102,7 +104,10 @@ def section(stats):
             out.append("")
             out += [line(p) for p in sorted(review, key=lambda p: p["number"], reverse=True)]
             out.append("")
-    head = f"![Pull requests by project]({SVG})\n\n{total_merged} merged pull requests so far, updated daily.\n"
+    head = (
+        f"![Open source pull requests machine]({MACHINE})\n\n"
+        f"![Pull requests by project]({SVG})\n\n{total_merged} merged pull requests so far, updated daily.\n"
+    )
     return head + "\n" + "\n".join(out).rstrip() + "\n"
 
 
@@ -144,6 +149,19 @@ def svg(stats):
     return "\n".join(parts) + "\n"
 
 
+def stats_json(stats):
+    """The same numbers as the chart, for scripts/pr_machine.mjs."""
+    projects = [{"name": name, "merged": merged, "review": review} for name, merged, review in stats]
+    return json.dumps(
+        {
+            "merged": sum(p["merged"] for p in projects),
+            "review": sum(p["review"] for p in projects),
+            "projects": projects,
+        },
+        indent=2,
+    ) + "\n"
+
+
 def main():
     with open(README, encoding="utf-8") as handle:
         readme = handle.read()
@@ -156,6 +174,9 @@ def main():
     os.makedirs(os.path.dirname(SVG) or ".", exist_ok=True)
     with open(SVG, "w", encoding="utf-8") as handle:
         handle.write(svg(stats))
+    os.makedirs(os.path.dirname(STATS) or ".", exist_ok=True)
+    with open(STATS, "w", encoding="utf-8") as handle:
+        handle.write(stats_json(stats))
     if updated != readme:
         with open(README, "w", encoding="utf-8") as handle:
             handle.write(updated)

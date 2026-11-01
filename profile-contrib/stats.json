@@ -1,0 +1,31 @@
+{
+  "merged": 14,
+  "review": 23,
+  "projects": [
+    {
+      "name": "Symfony",
+      "merged": 14,
+      "review": 2
+    },
+    {
+      "name": "API Platform",
+      "merged": 0,
+      "review": 8
+    },
+    {
+      "name": "API Platform installer",
+      "merged": 0,
+      "review": 2
+    },
+    {
+      "name": "Caddy",
+      "merged": 0,
+      "review": 8
+    },
+    {
+      "name": "Ting",
+      "merged": 0,
+      "review": 3
+    }
+  ]
+}

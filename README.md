@@ -27,6 +27,8 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 ## 🤝 Open Source Contributions
 
 <!-- CONTRIBUTIONS:START -->
+![Pull requests by project](profile-contrib/prs.svg)
+
 14 merged pull requests so far, updated daily.
 
 ### [Symfony](https://github.com/symfony/symfony)

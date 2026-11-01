@@ -26,72 +26,76 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ## 🤝 Open Source Contributions
 
+<!-- CONTRIBUTIONS:START -->
+14 merged pull requests so far, updated daily.
+
 ### [Symfony](https://github.com/symfony/symfony)
 
-14 merged pull requests across six components:
+Merged (14):
 
-- **Security**
-  - [#67723](https://github.com/symfony/symfony/pull/67723) do not request a re-authentication that cannot prove a recent authentication (8.2)
-  - [#67706](https://github.com/symfony/symfony/pull/67706) reject remember-me cookies with an invalid expiration time
-  - [#67707](https://github.com/symfony/symfony/pull/67707) reject login links with an out of range `expires` parameter
-  - [#67708](https://github.com/symfony/symfony/pull/67708) ignore target and failure paths that are neither paths nor absolute URLs
-- **Messenger**
-  - [#67710](https://github.com/symfony/symfony/pull/67710) do not expose the Redis DSN credentials in an exception message
-  - [#67711](https://github.com/symfony/symfony/pull/67711) do not resend the stamp headers of a received AMQP message
-  - [#67709](https://github.com/symfony/symfony/pull/67709) restore the schema assets filter when the Doctrine transport setup fails
-  - [#67722](https://github.com/symfony/symfony/pull/67722) ignore ids that are not integers when finding a message of the Doctrine transport
-- **Form**
-  - [#67700](https://github.com/symfony/symfony/pull/67700) ignore collection entries with invalid names when `allow_add` is enabled
-  - [#67701](https://github.com/symfony/symfony/pull/67701) fix the `post_max_size` check when it is set to a negative value
-  - [#67702](https://github.com/symfony/symfony/pull/67702) fix submitting `"0"` to a non-compound root form
-- **Cache**
-  - [#67704](https://github.com/symfony/symfony/pull/67704) fix the SQL of `PdoTagAwareAdapter` on MySQL, PostgreSQL, Oracle and SQL Server (8.2)
-  - [#67703](https://github.com/symfony/symfony/pull/67703) honor the `$save` flag set by the callback in `EarlyExpirationHandler`
-- **RateLimiter**
-  - [#67705](https://github.com/symfony/symfony/pull/67705) validate the refill amount, the fixed window interval and the sliding window limit
+- [#67723](https://github.com/symfony/symfony/pull/67723) **Security**: Do not request a re-authentication that cannot prove a recent authentication
+- [#67722](https://github.com/symfony/symfony/pull/67722) **Messenger**: Ignore ids that are not integers when finding a message of the Doctrine transport
+- [#67711](https://github.com/symfony/symfony/pull/67711) **Messenger**: Do not resend the stamp headers of a received AMQP message
+- [#67710](https://github.com/symfony/symfony/pull/67710) **Messenger**: Do not expose the Redis DSN in the invalid host query parameter exception
+- [#67709](https://github.com/symfony/symfony/pull/67709) **Messenger**: Restore the schema assets filter when the Doctrine transport setup fails
+- [#67708](https://github.com/symfony/symfony/pull/67708) **Security**: Ignore target and failure paths that are neither paths nor absolute URLs
+- [#67707](https://github.com/symfony/symfony/pull/67707) **Security**: Reject login links with an out of range "expires" parameter
+- [#67706](https://github.com/symfony/symfony/pull/67706) **Security**: Reject remember-me cookies with an invalid expiration time
+- [#67705](https://github.com/symfony/symfony/pull/67705) **RateLimiter**: Validate the refill amount, the fixed window interval and the sliding window limit
+- [#67704](https://github.com/symfony/symfony/pull/67704) **Cache**: Fix the SQL of PdoTagAwareAdapter on MySQL, PostgreSQL, Oracle and SQL Server
+- [#67703](https://github.com/symfony/symfony/pull/67703) **Cache**: Honor the $save flag set by the callback in EarlyExpirationHandler
+- [#67702](https://github.com/symfony/symfony/pull/67702) **Form**: Fix submitting "0" to a non-compound root form
+- [#67701](https://github.com/symfony/symfony/pull/67701) **Form**: Fix the post_max_size check when it is set to a negative value
+- [#67700](https://github.com/symfony/symfony/pull/67700) **Form**: Ignore collection entries with invalid names when allow_add is enabled
 
-Branch 6.4 unless noted, merged up to 7.4, 8.1 and 8.2.
+Under review (2):
 
-Under review:
-
-- [#67699](https://github.com/symfony/symfony/pull/67699) **Form**: validate the entries renumbered by the `keep_as_list` option of `CollectionType` (7.4)
-- [#67712](https://github.com/symfony/symfony/pull/67712) **Messenger**: stop keeping alive the messages that a listener prevents the worker from handling (7.4)
+- [#67712](https://github.com/symfony/symfony/pull/67712) **Messenger**: Stop keeping alive the messages that a listener prevents the worker from handling
+- [#67699](https://github.com/symfony/symfony/pull/67699) **Form**: Validate the entries renumbered by the keep_as_list option of CollectionType
 
 ### [API Platform](https://github.com/api-platform/core)
 
-Under review, branch 5.0:
+Under review (8):
 
-- [#8775](https://github.com/api-platform/core/pull/8775) **Doctrine**: ignore nested array values in range and search filters
-- [#8776](https://github.com/api-platform/core/pull/8776) **Doctrine**: reject too large pages with ODM partial pagination
-- [#8777](https://github.com/api-platform/core/pull/8777) **Doctrine**: left join collection associations in `IriFilter` inside OR groups
-- [#8778](https://github.com/api-platform/core/pull/8778) **Serializer**: reject a non-string id in JSON-LD and JSON:API relations
-- [#8779](https://github.com/api-platform/core/pull/8779) **State**: reject invalid GraphQL pagination cursors
-- [#8780](https://github.com/api-platform/core/pull/8780) **Serializer**: unwrap the collection key type, not the collection type
-- [#8781](https://github.com/api-platform/core/pull/8781) **Laravel**: ignore non-string values in search filters
-- [#8782](https://github.com/api-platform/core/pull/8782) **Laravel**: purge the HTTP cache on GraphQL mutations
+- [#8782](https://github.com/api-platform/core/pull/8782) **laravel**: purge the HTTP cache on GraphQL mutations
+- [#8781](https://github.com/api-platform/core/pull/8781) **laravel**: ignore non-string values in search filters
+- [#8780](https://github.com/api-platform/core/pull/8780) **serializer**: unwrap the collection key type, not the collection type
+- [#8779](https://github.com/api-platform/core/pull/8779) **state**: reject invalid GraphQL pagination cursors
+- [#8778](https://github.com/api-platform/core/pull/8778) **serializer**: reject a non-string id in JSON-LD and JSON:API relations
+- [#8777](https://github.com/api-platform/core/pull/8777) **doctrine**: left join collection associations in IriFilter inside OR groups
+- [#8776](https://github.com/api-platform/core/pull/8776) **doctrine**: reject too large pages with ODM partial pagination
+- [#8775](https://github.com/api-platform/core/pull/8775) **doctrine**: ignore nested array values in range and search filters
 
-[Installer](https://github.com/api-platform/api-platform), under review:
+### [API Platform installer](https://github.com/api-platform/api-platform)
 
+Under review (2):
+
+- [#3024](https://github.com/api-platform/api-platform/pull/3024) validate the --symfony-docker-ref value
 - [#3023](https://github.com/api-platform/api-platform/pull/3023) print the release version
-- [#3024](https://github.com/api-platform/api-platform/pull/3024) validate the `--symfony-docker-ref` value
 
 ### [Caddy](https://github.com/caddyserver/caddy)
 
-Under review:
+Under review (8):
 
-- [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices
-- [#8317](https://github.com/caddyserver/caddy/pull/8317) **admin**: authorize remote requests matching any permission entry
-- [#8318](https://github.com/caddyserver/caddy/pull/8318) **reverseproxy**: close upstream body when `handle_response` status is invalid
-- [#8319](https://github.com/caddyserver/caddy/pull/8319) **caddyhttp**: keep placeholder names intact in path matcher
-- [#8320](https://github.com/caddyserver/caddy/pull/8320) **reverseproxy**: skip unavailable upstream with a single `weighted_round_robin` weight
-- [#8321](https://github.com/caddyserver/caddy/pull/8321) **fastcgi**: skip params whose name cannot fit in a record
-- [#8322](https://github.com/caddyserver/caddy/pull/8322) **fileserver**: handle empty files in size try policies
 - [#8323](https://github.com/caddyserver/caddy/pull/8323) **logging**: close the redialed conn when writing to it fails
+- [#8322](https://github.com/caddyserver/caddy/pull/8322) **fileserver**: handle empty files in size try policies
+- [#8321](https://github.com/caddyserver/caddy/pull/8321) **fastcgi**: skip params whose name cannot fit in a record
+- [#8320](https://github.com/caddyserver/caddy/pull/8320) **reverseproxy**: skip unavailable upstream with a single weighted_round_robin weight
+- [#8319](https://github.com/caddyserver/caddy/pull/8319) **caddyhttp**: keep placeholder names intact in path matcher
+- [#8318](https://github.com/caddyserver/caddy/pull/8318) **reverseproxy**: close upstream body when handle_response status is invalid
+- [#8317](https://github.com/caddyserver/caddy/pull/8317) **admin**: authorize remote requests matching any permission entry
+- [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices
 
 ### [Ting](https://github.com/ccmbenchmark/ting) (CCM Benchmark ORM)
 
 - [#120](https://github.com/ccmbenchmark/ting/issues/120) reported an SQL injection in the PostgreSQL driver, fixed upstream in 4.1.1
-- [In review](https://github.com/ccmbenchmark/ting/pulls?q=is%3Apr+author%3ABenMacha+is%3Aopen): escaping of SQL identifiers and DSN values ([#136](https://github.com/ccmbenchmark/ting/pull/136)), CI for the lowest dependencies and PHP 8.5 ([#137](https://github.com/ccmbenchmark/ting/pull/137)), missing return in the PostgreSQL driver ([#123](https://github.com/ccmbenchmark/ting/pull/123))
+
+Under review (3):
+
+- [#137](https://github.com/ccmbenchmark/ting/pull/137) **ci**: fix the lowest-deps job, add PHP 8.5, composer audit, Dependabot, issue template and security policy
+- [#136](https://github.com/ccmbenchmark/ting/pull/136) **security**: escape SQL identifiers, validate order keys, quote the Pgsql DSN and check timezones
+- [#123](https://github.com/ccmbenchmark/ting/pull/123) Fix #122: Missing Return Statement in PostgreSQL Driver
+<!-- CONTRIBUTIONS:END -->
 
 ## 🌍 [Personal Portfolio](https://github.com/BenMacha/benmacha.github.io)
 A professional multilingual portfolio built with **Vue.js 3, TypeScript, and Tailwind CSS** showcasing my work and experience.

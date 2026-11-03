@@ -64,7 +64,14 @@
     "exclude_repos": [],
     "order": ["symfony/symfony", "api-platform/core", "api-platform/api-platform", "caddyserver/caddy", "ccmbenchmark/ting"],
     "overrides": {
-      "symfony/symfony": { "name": "Symfony", "logo": "symfony" },
+      "symfony/symfony": {
+        "name": "Symfony",
+        "logo": "symfony",
+        "notes": [
+          "Taken over by a maintainer: [#67725](https://github.com/symfony/symfony/pull/67725), Doctrine message id validation, rewritten by Nicolas Grekas from my [#67722](https://github.com/symfony/symfony/pull/67722)",
+          "Taken over by a maintainer: [#67726](https://github.com/symfony/symfony/pull/67726), re-authentication kept for legacy tokens, rewritten by Nicolas Grekas from my [#67723](https://github.com/symfony/symfony/pull/67723)"
+        ]
+      },
       "api-platform/core": { "name": "API Platform", "logo": "apiplatform" },
       "api-platform/api-platform": { "name": "API Platform installer", "logo": "apiplatform" },
       "caddyserver/caddy": { "name": "Caddy", "logo": "caddy" },

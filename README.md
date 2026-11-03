@@ -32,9 +32,12 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-17 merged pull requests so far, updated hourly.
+21 merged, 15 under review (1 approved) and 6 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
 
 ### [Symfony](https://github.com/symfony/symfony)
+
+- Taken over by a maintainer: [#67725](https://github.com/symfony/symfony/pull/67725), Doctrine message id validation, rewritten by Nicolas Grekas from my [#67722](https://github.com/symfony/symfony/pull/67722)
+- Taken over by a maintainer: [#67726](https://github.com/symfony/symfony/pull/67726), re-authentication kept for legacy tokens, rewritten by Nicolas Grekas from my [#67723](https://github.com/symfony/symfony/pull/67723)
 
 Merged (16):
 
@@ -78,16 +81,22 @@ Under review (2):
 
 ### [Caddy](https://github.com/caddyserver/caddy)
 
-Under review (8):
+Merged (4):
 
-- [#8323](https://github.com/caddyserver/caddy/pull/8323) **logging**: close the redialed conn when writing to it fails
 - [#8322](https://github.com/caddyserver/caddy/pull/8322) **fileserver**: handle empty files in size try policies
-- [#8321](https://github.com/caddyserver/caddy/pull/8321) **fastcgi**: skip params whose name cannot fit in a record
 - [#8320](https://github.com/caddyserver/caddy/pull/8320) **reverseproxy**: skip unavailable upstream with a single weighted_round_robin weight
-- [#8319](https://github.com/caddyserver/caddy/pull/8319) **caddyhttp**: keep placeholder names intact in path matcher
 - [#8318](https://github.com/caddyserver/caddy/pull/8318) **reverseproxy**: close upstream body when handle_response status is invalid
 - [#8317](https://github.com/caddyserver/caddy/pull/8317) **admin**: authorize remote requests matching any permission entry
-- [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices
+
+Under review (1):
+
+- [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices *(approved, merge pending)*
+
+Closed without merge (3):
+
+- [#8323](https://github.com/caddyserver/caddy/pull/8323) **logging**: close the redialed conn when writing to it fails
+- [#8321](https://github.com/caddyserver/caddy/pull/8321) **fastcgi**: skip params whose name cannot fit in a record
+- [#8319](https://github.com/caddyserver/caddy/pull/8319) **caddyhttp**: keep placeholder names intact in path matcher
 
 ### [Ting](https://github.com/ccmbenchmark/ting) (CCM Benchmark ORM)
 
@@ -99,11 +108,27 @@ Under review (3):
 - [#136](https://github.com/ccmbenchmark/ting/pull/136) **security**: escape SQL identifiers, validate order keys, quote the Pgsql DSN and check timezones
 - [#123](https://github.com/ccmbenchmark/ting/pull/123) Fix #122: Missing Return Statement in PostgreSQL Driver
 
+Closed without merge (1):
+
+- [#121](https://github.com/ccmbenchmark/ting/pull/121) Fix #120: SQL Injection Vulnerability in PostgreSQL Driver
+
 ### [Ting for API Platform](https://github.com/ccmbenchmark/ting_api_platform)
 
 Merged (1):
 
 - [#18](https://github.com/ccmbenchmark/ting_api_platform/pull/18) add enum filter
+
+### [invoice-parser](https://github.com/novalend/invoice-parser)
+
+Closed without merge (1):
+
+- [#12](https://github.com/novalend/invoice-parser/pull/12) Project Update
+
+### [swot](https://github.com/JetBrains/swot)
+
+Closed without merge (1):
+
+- [#5681](https://github.com/JetBrains/swot/pull/5681) Create cubes.txt
 <!-- CONTRIBUTIONS:END -->
 
 ## 🌍 [Personal Portfolio](https://github.com/BenMacha/benmacha.github.io)

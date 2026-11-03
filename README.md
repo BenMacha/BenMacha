@@ -32,7 +32,7 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-22 merged, 16 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
+29 merged, 9 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
@@ -60,17 +60,20 @@ Merged (16):
 
 ### [API Platform](https://github.com/api-platform/core)
 
-Under review (9):
+Merged (7):
 
 - [#8783](https://github.com/api-platform/core/pull/8783) **laravel**: filter on every value given to EqualsFilter
 - [#8782](https://github.com/api-platform/core/pull/8782) **laravel**: purge the HTTP cache on GraphQL mutations
 - [#8781](https://github.com/api-platform/core/pull/8781) **laravel**: ignore non-string values in search filters
 - [#8780](https://github.com/api-platform/core/pull/8780) **serializer**: unwrap the collection key type, not the collection type
 - [#8779](https://github.com/api-platform/core/pull/8779) **state**: reject invalid GraphQL pagination cursors
-- [#8778](https://github.com/api-platform/core/pull/8778) **serializer**: reject a non-string id in JSON-LD and JSON:API relations
-- [#8777](https://github.com/api-platform/core/pull/8777) **doctrine**: left join collection associations in IriFilter inside OR groups
 - [#8776](https://github.com/api-platform/core/pull/8776) **doctrine**: reject too large pages with ODM partial pagination
 - [#8775](https://github.com/api-platform/core/pull/8775) **doctrine**: ignore nested array values in range and search filters
+
+Under review (2):
+
+- [#8778](https://github.com/api-platform/core/pull/8778) **serializer**: reject a non-string id in JSON-LD and JSON:API relations
+- [#8777](https://github.com/api-platform/core/pull/8777) **doctrine**: left join collection associations in IriFilter inside OR groups
 
 ### [API Platform installer](https://github.com/api-platform/api-platform)
 

@@ -1,6 +1,6 @@
 {
-  "merged": 22,
-  "review": 16,
+  "merged": 29,
+  "review": 9,
   "approved": 0,
   "closed": 4,
   "projects": [
@@ -138,8 +138,8 @@
       "logo": "apiplatform",
       "suffix": "",
       "notes": [],
-      "merged": 0,
-      "review": 9,
+      "merged": 7,
+      "review": 2,
       "approved": 0,
       "closed": 0,
       "prs": [
@@ -147,41 +147,36 @@
           "number": 8783,
           "title": "fix(laravel): filter on every value given to EqualsFilter",
           "url": "https://github.com/api-platform/core/pull/8783",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8782,
           "title": "fix(laravel): purge the HTTP cache on GraphQL mutations",
           "url": "https://github.com/api-platform/core/pull/8782",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8781,
           "title": "fix(laravel): ignore non-string values in search filters",
           "url": "https://github.com/api-platform/core/pull/8781",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8780,
           "title": "fix(serializer): unwrap the collection key type, not the collection type",
           "url": "https://github.com/api-platform/core/pull/8780",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8779,
           "title": "fix(state): reject invalid GraphQL pagination cursors",
           "url": "https://github.com/api-platform/core/pull/8779",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8778,
@@ -203,17 +198,15 @@
           "number": 8776,
           "title": "fix(doctrine): reject too large pages with ODM partial pagination",
           "url": "https://github.com/api-platform/core/pull/8776",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8775,
           "title": "fix(doctrine): ignore nested array values in range and search filters",
           "url": "https://github.com/api-platform/core/pull/8775",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         }
       ]
     },

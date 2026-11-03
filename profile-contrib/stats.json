@@ -1,6 +1,6 @@
 {
   "merged": 21,
-  "review": 15,
+  "review": 17,
   "approved": 1,
   "closed": 6,
   "projects": [
@@ -253,10 +253,26 @@
       "suffix": "",
       "notes": [],
       "merged": 4,
-      "review": 1,
+      "review": 3,
       "approved": 1,
       "closed": 3,
       "prs": [
+        {
+          "number": 8343,
+          "title": "caddyhttp: lower-case path patterns with placeholders at request time",
+          "url": "https://github.com/caddyserver/caddy/pull/8343",
+          "state": "open",
+          "created": "2026-11-03",
+          "approved": false
+        },
+        {
+          "number": 8342,
+          "title": "fastcgi: fail the request when a param name cannot fit in a record",
+          "url": "https://github.com/caddyserver/caddy/pull/8342",
+          "state": "open",
+          "created": "2026-11-03",
+          "approved": false
+        },
         {
           "number": 8323,
           "title": "logging: close the redialed conn when writing to it fails",

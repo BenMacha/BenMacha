@@ -32,7 +32,7 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-21 merged, 15 under review (1 approved) and 6 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
+21 merged, 17 under review (1 approved) and 6 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
@@ -88,9 +88,11 @@ Merged (4):
 - [#8318](https://github.com/caddyserver/caddy/pull/8318) **reverseproxy**: close upstream body when handle_response status is invalid
 - [#8317](https://github.com/caddyserver/caddy/pull/8317) **admin**: authorize remote requests matching any permission entry
 
-Under review (1):
+Under review (3):
 
 - [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices *(approved, merge pending)*
+- [#8343](https://github.com/caddyserver/caddy/pull/8343) **caddyhttp**: lower-case path patterns with placeholders at request time
+- [#8342](https://github.com/caddyserver/caddy/pull/8342) **fastcgi**: fail the request when a param name cannot fit in a record
 
 Closed without merge (3):
 

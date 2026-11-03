@@ -32,7 +32,7 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-22 merged, 16 under review (0 approved) and 6 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
+22 merged, 16 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
@@ -119,18 +119,6 @@ Closed without merge (1):
 Merged (1):
 
 - [#18](https://github.com/ccmbenchmark/ting_api_platform/pull/18) add enum filter
-
-### [invoice-parser](https://github.com/novalend/invoice-parser)
-
-Closed without merge (1):
-
-- [#12](https://github.com/novalend/invoice-parser/pull/12) Project Update
-
-### [swot](https://github.com/JetBrains/swot)
-
-Closed without merge (1):
-
-- [#5681](https://github.com/JetBrains/swot/pull/5681) Create cubes.txt
 <!-- CONTRIBUTIONS:END -->
 
 ## 🌍 [Personal Portfolio](https://github.com/BenMacha/benmacha.github.io)

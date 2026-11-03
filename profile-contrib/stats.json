@@ -2,7 +2,7 @@
   "merged": 22,
   "review": 16,
   "approved": 0,
-  "closed": 6,
+  "closed": 4,
   "projects": [
     {
       "repo": "symfony/symfony",
@@ -398,48 +398,6 @@
           "url": "https://github.com/ccmbenchmark/ting_api_platform/pull/18",
           "state": "merged",
           "created": "2024-09-16"
-        }
-      ]
-    },
-    {
-      "repo": "novalend/invoice-parser",
-      "name": "invoice-parser",
-      "logo": "repo",
-      "suffix": "",
-      "notes": [],
-      "merged": 0,
-      "review": 0,
-      "approved": 0,
-      "closed": 1,
-      "prs": [
-        {
-          "number": 12,
-          "title": "Project Update",
-          "url": "https://github.com/novalend/invoice-parser/pull/12",
-          "state": "closed",
-          "created": "2025-03-09",
-          "closed": "2025-05-15"
-        }
-      ]
-    },
-    {
-      "repo": "JetBrains/swot",
-      "name": "swot",
-      "logo": "repo",
-      "suffix": "",
-      "notes": [],
-      "merged": 0,
-      "review": 0,
-      "approved": 0,
-      "closed": 1,
-      "prs": [
-        {
-          "number": 5681,
-          "title": "Create cubes.txt",
-          "url": "https://github.com/JetBrains/swot/pull/5681",
-          "state": "closed",
-          "created": "2018-12-24",
-          "closed": "2018-12-25"
         }
       ]
     }

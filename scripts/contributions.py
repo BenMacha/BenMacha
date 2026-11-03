@@ -6,8 +6,8 @@ public APIs:
 
 - Open source contributions: every public pull request authored by the profile
   owner in a repository owned by someone else (GitHub search), grouped by
-  repository. Repositories with only closed, unmerged pull requests are left
-  out. Names, logos, notes and order come from the "contributions" overrides of
+  repository. Pull requests closed without merge are kept and listed apart,
+  open ones note an approval. Names, logos, notes and order come from the "contributions" overrides of
   profile.json; a repository found for the first time gets its own name and a
   neutral mark. Written to profile-contrib/stats.json.
 - Packages: every package of the vendor on Packagist, with its description,
@@ -84,13 +84,19 @@ def contributions(profile):
             continue
         merged = bool(item.get("pull_request", {}).get("merged_at"))
         state = "merged" if merged else ("open" if item["state"] == "open" else "closed")
-        repos.setdefault(repo, []).append(
-            {"number": item["number"], "title": item["title"], "url": item["html_url"], "state": state, "created": item["created_at"][:10]}
-        )
+        pr = {"number": item["number"], "title": item["title"], "url": item["html_url"], "state": state, "created": item["created_at"][:10]}
+        if state == "open":
+            # approved: the latest decisive review is an approval, the merge is pending
+            reviews = get_json(f"https://api.github.com/repos/{repo}/pulls/{item['number']}/reviews?per_page=100", github=True)
+            decisive = [r["state"] for r in reviews if r["state"] in ("APPROVED", "CHANGES_REQUESTED")]
+            pr["approved"] = bool(decisive) and decisive[-1] == "APPROVED"
+        if state == "closed":
+            pr["closed"] = (item.get("closed_at") or "")[:10]
+        repos.setdefault(repo, []).append(pr)
     order = {name.lower(): i for i, name in enumerate(config.get("order", []))}
     projects = []
     for repo, prs in repos.items():
-        prs = [p for p in prs if p["state"] != "closed"]
+        # closed without merge stay listed: rejections are part of the history
         extra = overrides.get(repo, {})
         if not prs and not extra.get("notes"):
             continue
@@ -104,11 +110,19 @@ def contributions(profile):
                 "notes": extra.get("notes", []),
                 "merged": sum(p["state"] == "merged" for p in prs),
                 "review": sum(p["state"] == "open" for p in prs),
+                "approved": sum(bool(p.get("approved")) for p in prs),
+                "closed": sum(p["state"] == "closed" for p in prs),
                 "prs": prs,
             }
         )
     projects.sort(key=lambda p: (order.get(p["repo"].lower(), len(order)), -p["merged"], -(p["merged"] + p["review"]), p["name"].lower()))
-    return {"merged": sum(p["merged"] for p in projects), "review": sum(p["review"] for p in projects), "projects": projects}
+    return {
+        "merged": sum(p["merged"] for p in projects),
+        "review": sum(p["review"] for p in projects),
+        "approved": sum(p["approved"] for p in projects),
+        "closed": sum(p["closed"] for p in projects),
+        "projects": projects,
+    }
 
 
 def label(title):
@@ -128,7 +142,8 @@ def label(title):
 def line(pr):
     scope, text = label(pr["title"])
     prefix = f"**{scope}**: " if scope else ""
-    return f"- [#{pr['number']}]({pr['url']}) {prefix}{text}"
+    tag = " *(approved, merge pending)*" if pr.get("approved") else ""
+    return f"- [#{pr['number']}]({pr['url']}) {prefix}{text}{tag}"
 
 
 def contributions_section(stats):
@@ -137,12 +152,14 @@ def contributions_section(stats):
         "",
         "![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)",
         "",
-        f"{stats.get('merged', 0)} merged pull requests so far, updated hourly.",
+        f"{stats.get('merged', 0)} merged, {stats.get('review', 0)} under review ({stats.get('approved', 0)} approved) and {stats.get('closed', 0)} closed without merge, updated hourly. "
+        "Rejected pull requests stay listed: the reviews they got are part of the work.",
         "",
     ]
     for p in stats.get("projects", []):
         merged = [x for x in p["prs"] if x["state"] == "merged"]
-        review = [x for x in p["prs"] if x["state"] == "open"]
+        review = sorted((x for x in p["prs"] if x["state"] == "open"), key=lambda x: not x.get("approved"))
+        closed = [x for x in p["prs"] if x["state"] == "closed"]
         out += [f"### [{p['name']}](https://github.com/{p['repo']}){p.get('suffix', '')}", ""]
         if p.get("notes"):
             out += [f"- {note}" for note in p["notes"]] + [""]
@@ -150,6 +167,8 @@ def contributions_section(stats):
             out += [f"Merged ({len(merged)}):", ""] + [line(x) for x in merged] + [""]
         if review:
             out += [f"Under review ({len(review)}):", ""] + [line(x) for x in review] + [""]
+        if closed:
+            out += [f"Closed without merge ({len(closed)}):", ""] + [line(x) for x in closed] + [""]
     return "\n".join(out).rstrip() + "\n"
 
 

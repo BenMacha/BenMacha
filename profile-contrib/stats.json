@@ -1,15 +1,22 @@
 {
-  "merged": 17,
-  "review": 22,
+  "merged": 21,
+  "review": 15,
+  "approved": 1,
+  "closed": 6,
   "projects": [
     {
       "repo": "symfony/symfony",
       "name": "Symfony",
       "logo": "symfony",
       "suffix": "",
-      "notes": [],
+      "notes": [
+        "Taken over by a maintainer: [#67725](https://github.com/symfony/symfony/pull/67725), Doctrine message id validation, rewritten by Nicolas Grekas from my [#67722](https://github.com/symfony/symfony/pull/67722)",
+        "Taken over by a maintainer: [#67726](https://github.com/symfony/symfony/pull/67726), re-authentication kept for legacy tokens, rewritten by Nicolas Grekas from my [#67723](https://github.com/symfony/symfony/pull/67723)"
+      ],
       "merged": 16,
       "review": 0,
+      "approved": 0,
+      "closed": 0,
       "prs": [
         {
           "number": 67723,
@@ -133,69 +140,80 @@
       "notes": [],
       "merged": 0,
       "review": 9,
+      "approved": 0,
+      "closed": 0,
       "prs": [
         {
           "number": 8783,
           "title": "fix(laravel): filter on every value given to EqualsFilter",
           "url": "https://github.com/api-platform/core/pull/8783",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8782,
           "title": "fix(laravel): purge the HTTP cache on GraphQL mutations",
           "url": "https://github.com/api-platform/core/pull/8782",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8781,
           "title": "fix(laravel): ignore non-string values in search filters",
           "url": "https://github.com/api-platform/core/pull/8781",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8780,
           "title": "fix(serializer): unwrap the collection key type, not the collection type",
           "url": "https://github.com/api-platform/core/pull/8780",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8779,
           "title": "fix(state): reject invalid GraphQL pagination cursors",
           "url": "https://github.com/api-platform/core/pull/8779",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8778,
           "title": "fix(serializer): reject a non-string id in JSON-LD and JSON:API relations",
           "url": "https://github.com/api-platform/core/pull/8778",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8777,
           "title": "fix(doctrine): left join collection associations in IriFilter inside OR groups",
           "url": "https://github.com/api-platform/core/pull/8777",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8776,
           "title": "fix(doctrine): reject too large pages with ODM partial pagination",
           "url": "https://github.com/api-platform/core/pull/8776",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 8775,
           "title": "fix(doctrine): ignore nested array values in range and search filters",
           "url": "https://github.com/api-platform/core/pull/8775",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         }
       ]
     },
@@ -207,20 +225,24 @@
       "notes": [],
       "merged": 0,
       "review": 2,
+      "approved": 0,
+      "closed": 0,
       "prs": [
         {
           "number": 3024,
           "title": "fix: validate the --symfony-docker-ref value",
           "url": "https://github.com/api-platform/api-platform/pull/3024",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         },
         {
           "number": 3023,
           "title": "fix: print the release version",
           "url": "https://github.com/api-platform/api-platform/pull/3023",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": false
         }
       ]
     },
@@ -230,56 +252,61 @@
       "logo": "caddy",
       "suffix": "",
       "notes": [],
-      "merged": 0,
-      "review": 8,
+      "merged": 4,
+      "review": 1,
+      "approved": 1,
+      "closed": 3,
       "prs": [
         {
           "number": 8323,
           "title": "logging: close the redialed conn when writing to it fails",
           "url": "https://github.com/caddyserver/caddy/pull/8323",
-          "state": "open",
-          "created": "2026-11-01"
+          "state": "closed",
+          "created": "2026-11-01",
+          "closed": "2026-11-03"
         },
         {
           "number": 8322,
           "title": "fileserver: handle empty files in size try policies",
           "url": "https://github.com/caddyserver/caddy/pull/8322",
-          "state": "open",
+          "state": "merged",
           "created": "2026-11-01"
         },
         {
           "number": 8321,
           "title": "fastcgi: skip params whose name cannot fit in a record",
           "url": "https://github.com/caddyserver/caddy/pull/8321",
-          "state": "open",
-          "created": "2026-11-01"
+          "state": "closed",
+          "created": "2026-11-01",
+          "closed": "2026-11-03"
         },
         {
           "number": 8320,
           "title": "reverseproxy: skip unavailable upstream with a single weighted_round_robin weight",
           "url": "https://github.com/caddyserver/caddy/pull/8320",
-          "state": "open",
+          "state": "merged",
           "created": "2026-11-01"
         },
         {
           "number": 8319,
           "title": "caddyhttp: keep placeholder names intact in path matcher",
           "url": "https://github.com/caddyserver/caddy/pull/8319",
-          "state": "open",
-          "created": "2026-11-01"
+          "state": "closed",
+          "created": "2026-11-01",
+          "closed": "2026-11-03"
         },
         {
           "number": 8318,
           "title": "reverseproxy: close upstream body when handle_response status is invalid",
           "url": "https://github.com/caddyserver/caddy/pull/8318",
-          "state": "open",
+          "state": "merged",
           "created": "2026-11-01"
         },
         {
           "number": 8317,
           "title": "admin: authorize remote requests matching any permission entry",
           "url": "https://github.com/caddyserver/caddy/pull/8317",
-          "state": "open",
+          "state": "merged",
           "created": "2026-11-01"
         },
         {
@@ -287,7 +314,8 @@
           "title": "caddyfile: reject negative import argument indices",
           "url": "https://github.com/caddyserver/caddy/pull/8316",
           "state": "open",
-          "created": "2026-11-01"
+          "created": "2026-11-01",
+          "approved": true
         }
       ]
     },
@@ -301,27 +329,40 @@
       ],
       "merged": 0,
       "review": 3,
+      "approved": 0,
+      "closed": 1,
       "prs": [
         {
           "number": 137,
           "title": "chore(ci): fix the lowest-deps job, add PHP 8.5, composer audit, Dependabot, issue template and security policy",
           "url": "https://github.com/ccmbenchmark/ting/pull/137",
           "state": "open",
-          "created": "2026-10-31"
+          "created": "2026-10-31",
+          "approved": false
         },
         {
           "number": 136,
           "title": "fix(security): escape SQL identifiers, validate order keys, quote the Pgsql DSN and check timezones",
           "url": "https://github.com/ccmbenchmark/ting/pull/136",
           "state": "open",
-          "created": "2026-10-31"
+          "created": "2026-10-31",
+          "approved": false
         },
         {
           "number": 123,
           "title": "Fix #122: Missing Return Statement in PostgreSQL Driver",
           "url": "https://github.com/ccmbenchmark/ting/pull/123",
           "state": "open",
-          "created": "2025-08-27"
+          "created": "2025-08-27",
+          "approved": false
+        },
+        {
+          "number": 121,
+          "title": "Fix #120: SQL Injection Vulnerability in PostgreSQL Driver",
+          "url": "https://github.com/ccmbenchmark/ting/pull/121",
+          "state": "closed",
+          "created": "2025-08-27",
+          "closed": "2026-10-31"
         }
       ]
     },
@@ -333,6 +374,8 @@
       "notes": [],
       "merged": 1,
       "review": 0,
+      "approved": 0,
+      "closed": 0,
       "prs": [
         {
           "number": 18,
@@ -340,6 +383,48 @@
           "url": "https://github.com/ccmbenchmark/ting_api_platform/pull/18",
           "state": "merged",
           "created": "2024-09-16"
+        }
+      ]
+    },
+    {
+      "repo": "novalend/invoice-parser",
+      "name": "invoice-parser",
+      "logo": "repo",
+      "suffix": "",
+      "notes": [],
+      "merged": 0,
+      "review": 0,
+      "approved": 0,
+      "closed": 1,
+      "prs": [
+        {
+          "number": 12,
+          "title": "Project Update",
+          "url": "https://github.com/novalend/invoice-parser/pull/12",
+          "state": "closed",
+          "created": "2025-03-09",
+          "closed": "2025-05-15"
+        }
+      ]
+    },
+    {
+      "repo": "JetBrains/swot",
+      "name": "swot",
+      "logo": "repo",
+      "suffix": "",
+      "notes": [],
+      "merged": 0,
+      "review": 0,
+      "approved": 0,
+      "closed": 1,
+      "prs": [
+        {
+          "number": 5681,
+          "title": "Create cubes.txt",
+          "url": "https://github.com/JetBrains/swot/pull/5681",
+          "state": "closed",
+          "created": "2018-12-24",
+          "closed": "2018-12-25"
         }
       ]
     }

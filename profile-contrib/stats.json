@@ -1,7 +1,7 @@
 {
-  "merged": 21,
-  "review": 17,
-  "approved": 1,
+  "merged": 22,
+  "review": 16,
+  "approved": 0,
   "closed": 6,
   "projects": [
     {
@@ -252,9 +252,9 @@
       "logo": "caddy",
       "suffix": "",
       "notes": [],
-      "merged": 4,
-      "review": 3,
-      "approved": 1,
+      "merged": 5,
+      "review": 2,
+      "approved": 0,
       "closed": 3,
       "prs": [
         {
@@ -329,9 +329,8 @@
           "number": 8316,
           "title": "caddyfile: reject negative import argument indices",
           "url": "https://github.com/caddyserver/caddy/pull/8316",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": true
+          "state": "merged",
+          "created": "2026-11-01"
         }
       ]
     },

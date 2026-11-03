@@ -61,7 +61,7 @@
   },
   "contributions": {
     "exclude_owners": ["BenMacha", "pepprio", "Pignelle"],
-    "exclude_repos": [],
+    "exclude_repos": ["JetBrains/swot", "novalend/invoice-parser"],
     "order": ["symfony/symfony", "api-platform/core", "api-platform/api-platform", "caddyserver/caddy", "ccmbenchmark/ting"],
     "overrides": {
       "symfony/symfony": {

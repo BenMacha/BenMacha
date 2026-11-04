@@ -1,6 +1,6 @@
 {
-  "merged": 30,
-  "review": 8,
+  "merged": 32,
+  "review": 6,
   "approved": 0,
   "closed": 4,
   "projects": [
@@ -138,8 +138,8 @@
       "logo": "apiplatform",
       "suffix": "",
       "notes": [],
-      "merged": 8,
-      "review": 1,
+      "merged": 9,
+      "review": 0,
       "approved": 0,
       "closed": 0,
       "prs": [
@@ -189,9 +189,8 @@
           "number": 8777,
           "title": "fix(doctrine): left join collection associations in IriFilter inside OR groups",
           "url": "https://github.com/api-platform/core/pull/8777",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 8776,
@@ -244,8 +243,8 @@
       "logo": "caddy",
       "suffix": "",
       "notes": [],
-      "merged": 5,
-      "review": 2,
+      "merged": 6,
+      "review": 1,
       "approved": 0,
       "closed": 3,
       "prs": [
@@ -253,9 +252,8 @@
           "number": 8343,
           "title": "caddyhttp: lower-case path patterns with placeholders at request time",
           "url": "https://github.com/caddyserver/caddy/pull/8343",
-          "state": "open",
-          "created": "2026-11-03",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-03"
         },
         {
           "number": 8342,

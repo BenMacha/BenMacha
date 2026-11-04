@@ -32,7 +32,7 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-30 merged, 8 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
+32 merged, 6 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
@@ -60,7 +60,7 @@ Merged (16):
 
 ### [API Platform](https://github.com/api-platform/core)
 
-Merged (8):
+Merged (9):
 
 - [#8783](https://github.com/api-platform/core/pull/8783) **laravel**: filter on every value given to EqualsFilter
 - [#8782](https://github.com/api-platform/core/pull/8782) **laravel**: purge the HTTP cache on GraphQL mutations
@@ -68,12 +68,9 @@ Merged (8):
 - [#8780](https://github.com/api-platform/core/pull/8780) **serializer**: unwrap the collection key type, not the collection type
 - [#8779](https://github.com/api-platform/core/pull/8779) **state**: reject invalid GraphQL pagination cursors
 - [#8778](https://github.com/api-platform/core/pull/8778) **serializer**: reject a non-string id in JSON-LD and JSON:API relations
+- [#8777](https://github.com/api-platform/core/pull/8777) **doctrine**: left join collection associations in IriFilter inside OR groups
 - [#8776](https://github.com/api-platform/core/pull/8776) **doctrine**: reject too large pages with ODM partial pagination
 - [#8775](https://github.com/api-platform/core/pull/8775) **doctrine**: ignore nested array values in range and search filters
-
-Under review (1):
-
-- [#8777](https://github.com/api-platform/core/pull/8777) **doctrine**: left join collection associations in IriFilter inside OR groups
 
 ### [API Platform installer](https://github.com/api-platform/api-platform)
 
@@ -84,17 +81,17 @@ Under review (2):
 
 ### [Caddy](https://github.com/caddyserver/caddy)
 
-Merged (5):
+Merged (6):
 
+- [#8343](https://github.com/caddyserver/caddy/pull/8343) **caddyhttp**: lower-case path patterns with placeholders at request time
 - [#8322](https://github.com/caddyserver/caddy/pull/8322) **fileserver**: handle empty files in size try policies
 - [#8320](https://github.com/caddyserver/caddy/pull/8320) **reverseproxy**: skip unavailable upstream with a single weighted_round_robin weight
 - [#8318](https://github.com/caddyserver/caddy/pull/8318) **reverseproxy**: close upstream body when handle_response status is invalid
 - [#8317](https://github.com/caddyserver/caddy/pull/8317) **admin**: authorize remote requests matching any permission entry
 - [#8316](https://github.com/caddyserver/caddy/pull/8316) **caddyfile**: reject negative import argument indices
 
-Under review (2):
+Under review (1):
 
-- [#8343](https://github.com/caddyserver/caddy/pull/8343) **caddyhttp**: lower-case path patterns with placeholders at request time
 - [#8342](https://github.com/caddyserver/caddy/pull/8342) **fastcgi**: fail the request when a param name cannot fit in a record
 
 Closed without merge (3):

@@ -32,7 +32,7 @@ Also: [authx-bundle](https://github.com/BenMacha/authx-bundle) (JWT, OpenID Conn
 
 ![Open source card index: one drawer per contributed project, one card per pull request, green tab merged, red tab under review](profile-contrib/pr-cabinet.svg)
 
-32 merged, 6 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
+33 merged, 5 under review (0 approved) and 4 closed without merge, updated hourly. Rejected pull requests stay listed: the reviews they got are part of the work.
 
 ### [Symfony](https://github.com/symfony/symfony)
 
@@ -74,9 +74,12 @@ Merged (9):
 
 ### [API Platform installer](https://github.com/api-platform/api-platform)
 
-Under review (2):
+Merged (1):
 
-- [#3024](https://github.com/api-platform/api-platform/pull/3024) validate the --symfony-docker-ref value
+- [#3024](https://github.com/api-platform/api-platform/pull/3024) **installer**: validate --symfony-docker-ref
+
+Under review (1):
+
 - [#3023](https://github.com/api-platform/api-platform/pull/3023) print the release version
 
 ### [Caddy](https://github.com/caddyserver/caddy)

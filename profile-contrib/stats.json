@@ -1,6 +1,6 @@
 {
-  "merged": 32,
-  "review": 6,
+  "merged": 33,
+  "review": 5,
   "approved": 0,
   "closed": 4,
   "projects": [
@@ -214,18 +214,17 @@
       "logo": "apiplatform",
       "suffix": "",
       "notes": [],
-      "merged": 0,
-      "review": 2,
+      "merged": 1,
+      "review": 1,
       "approved": 0,
       "closed": 0,
       "prs": [
         {
           "number": 3024,
-          "title": "fix: validate the --symfony-docker-ref value",
+          "title": "feat(installer): validate --symfony-docker-ref",
           "url": "https://github.com/api-platform/api-platform/pull/3024",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         },
         {
           "number": 3023,

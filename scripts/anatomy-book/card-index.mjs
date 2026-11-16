@@ -118,13 +118,13 @@ export function cardIndex({ projects, logoMark, width = 796 }) {
       });
       out.push(box({ x: x0 + IW - 2, y: Y, w: 2, d: PULL }, Z + TRAY_Z, WALL));
       const fy = Y + PULL + 3;
-      const holder = rectY(fy, x0 + 6, Z + 13, IW - 12, 14);
+      const holder = rectY(fy, x0 + 6, Z + 12, IW - 12, 16);
       out.push(box({ x: x0 - 2, y: Y + PULL, w: IW + 4, d: 3 }, Z + TRAY_Z - 4, FRONT_Z - TRAY_Z + 4, "", `<path class="ln" d="${holder}"/>`));
       const m = k.sideMatrix([x0 + 10, fy], Z + 26.5, P, "left");
       out.push(`<g transform="${m}">${logoMark(p.logo || "repo", 0, 0.5, 11, "logo")}</g>`);
       const name = p.name.length > 20 ? p.name.slice(0, 19) + "…" : p.name;
-      out.push(faceText("y", fy, x0 + 25, Z + 18.8, name, { size: 7.6, cls: "h ink", anchor: "start" }));
-      out.push(faceText("y", fy, x0 + 25, Z + 14.6, `${p.merged} merged · ${p.review} in review`, { size: 5.6, cls: "mono muted", anchor: "start" }));
+      out.push(faceText("y", fy, x0 + 25, Z + 21.6, name, { size: 7, cls: "h ink", anchor: "start" }));
+      out.push(faceText("y", fy, x0 + 25, Z + 14.4, `${p.merged} merged · ${p.review} in review`, { size: 5.2, cls: "mono muted", anchor: "start" }));
       out.push(box({ x: x0 + IW / 2 - 12, y: fy, w: 24, d: 3 }, Z + TRAY_Z - 1, 3.4));
       if (Z === 0 && !points.drawer) points.drawer = at([x0 + 6, fy, Z + 27]);
     });

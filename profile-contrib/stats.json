@@ -1,6 +1,6 @@
 {
-  "merged": 33,
-  "review": 5,
+  "merged": 34,
+  "review": 4,
   "approved": 0,
   "closed": 4,
   "projects": [
@@ -214,8 +214,8 @@
       "logo": "apiplatform",
       "suffix": "",
       "notes": [],
-      "merged": 1,
-      "review": 1,
+      "merged": 2,
+      "review": 0,
       "approved": 0,
       "closed": 0,
       "prs": [
@@ -230,9 +230,8 @@
           "number": 3023,
           "title": "fix: print the release version",
           "url": "https://github.com/api-platform/api-platform/pull/3023",
-          "state": "open",
-          "created": "2026-11-01",
-          "approved": false
+          "state": "merged",
+          "created": "2026-11-01"
         }
       ]
     },

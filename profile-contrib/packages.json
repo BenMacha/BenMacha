@@ -17,7 +17,7 @@
     },
     {
       "name": "benmacha/audit-bundle",
-      "downloads": 5,
+      "downloads": 6,
       "description": "A comprehensive Symfony bundle for auditing entity changes with rollback functionality, web interface, and REST API",
       "repository": "https://github.com/BenMacha/audit-bundle",
       "what": "Entity audit, rollback"
